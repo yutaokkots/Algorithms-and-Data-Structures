@@ -1,6 +1,9 @@
 # Data Structures overview
 
 1) Arrays - contiguous memory locations. Collection of elements of the same type. 
+    e.g. Valid Anagram -> use memo/hashmap
+    e.g. Two-sum -> use memo/hashmap
+    e.g. Group Anagrams -> use memo/hashmap
 
 2) Linked lists - a node contains data and a reference to the next node. Collection of nodes. linked data structure. Allows for dynamic size and efficient insertion and deletion, but slower access time. 
 
@@ -21,3 +24,5 @@
     (2) Adjacency matrix - a two-dimensional matrix to represent the connection between vertices
     
 8) Hash Tables - Typically uses a contiguous data structure such as an array/list that holds buckets, but elements stored in the array are non-contiguous. Each bucket holds one or more key-value pairs. A hash function is designed to generate a unique key for the key-value pairs, and a value corresponds to that unique key. Basic functions for hash tables are search, insertion, and deletion of values.
+
+9) Sets
