@@ -11,10 +11,9 @@ def reverse_string(s: str) -> str:
     right = len(s) - 1
     str_list = list(s)
     while right > left:
-
-        interm = str_list[right]
+        interim = str_list[right]
         str_list[right] = str_list[left]
-        str_list[left] = interm
+        str_list[left] = interim
         left += 1
         right -= 1
 
