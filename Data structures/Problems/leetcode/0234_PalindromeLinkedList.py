@@ -8,9 +8,27 @@ class ListNode:
         self.val = val
         self.next = next
 
-# class Solution:
-#     def isPalindrome(self, head: any[ListNode]) -> bool:
-#         pass
+# Class for solution. 
+class Solution:
+    def isPalindrome(self, head: any[ListNode]) -> bool:
+        stack = []
+        # stack [4, 5, 6] <- 6
+        # stack [] 4
+        while head.next:
+            stack.append(head.val)
+            head = head.next
+            if not head.next:
+                stack.append(head.val)
+        if len(stack) == 0 or len(stack) == 1:
+            return True
+        l = 0
+        r = len(stack) - 1
+        while l < r:
+            if stack[l] != stack[r]:
+                return False
+            l += 1
+            r -= 1
+        return True
 
 
     
@@ -54,8 +72,6 @@ def create_palindromic_linked_list():
         else:
             node_list[-1].next = node
             node_list.append(node)
-    
-
     return node_list[0]
 
 head_1 = ref_1 = create_linked_list()
@@ -66,5 +82,6 @@ def read_linked_list(head):
         print(head.val)
         head = head.next
 
-read_linked_list(ref_1)
-read_linked_list(ref_2)
+# read_linked_list(ref_1)
+# read_linked_list(ref_2)
+
