@@ -30,6 +30,10 @@ class Solution:
             r -= 1
         return True
 
+    def isPalindrome2(self, head: any[ListNode]) -> bool:
+        while head.next:
+            head = head.next
+            pass
 
     
 def create_linked_list():
