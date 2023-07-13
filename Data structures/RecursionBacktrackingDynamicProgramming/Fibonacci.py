@@ -7,8 +7,8 @@ class Fib():
         
         return self.fibonacci_head(n - 1) + self.fibonacci_head(n - 2)
         
-        # fib1 = self.fibonacci_head(n - 1)
-        # fib2 = self.fibonacci_head(n - 2)
+        # fib1 = self.fibonacci_head(n - 1)     ## SEVERAL STACK FRAMES are created concurrently in stack
+        # fib2 = self.fibonacci_head(n - 2)     ## SEVERAL STACK FRAMES are created concurrently in stack
 
         # result = fib1 + fib2
 
@@ -37,4 +37,3 @@ print(result2)
 result3 = fib.fibonacci_tail2(8)
 print(result3)
 
-## SEVERAL STACK FRAMES are created concurrently in stack
