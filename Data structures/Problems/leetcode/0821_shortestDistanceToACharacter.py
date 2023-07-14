@@ -27,31 +27,32 @@ class Solution:
         # answer_stack = [[4, 1] ] check to see where latest c is located /// use a counter?
         #                  [4, 1] = answer_stack.pop()  vs [5, 0]
         #                   [4, 1] if current index of c - popped[0] > popped[1], then use former
-
         latest_c_index = None
         stack = []
         answer = []
-
+        
+        #[index, distance from c]
         for i in range(len(s)):
-
-            if s[i] == c and stack:
+            if s[i] == c:
                 latest_c_index = i
-                while stack:
-                    popped_letter = stack.pop()
-                    if popped_letter[1] == -1 or abs(popped_letter[0] - latest_c_index) < popped_letter[1]:
-                        popped_letter[1] = latest_c_index - popped_letter[0]
-                    answer.append(popped_letter)
-                answer.append([i, 0])
-            elif s[i] == c:
-                latest_c_index = i
-                answer.append([i, 0])
-
-            if s[i] != c and latest_c_index == None: ## if the current letter is not c AND the c_index has not been found
-                stack.append([i, -1])
-            
-            if s[i] != c and latest_c_index: ## if the current letter is not c AND the c_index has been found, latest_c_
-                stack.append([i, abs(latest_c_index - i)])
-
+                stack.append([i, 0])
+            else:
+                if latest_c_index == None:
+                    stack.append([i, None])
+                else:
+                    stack.append([i, abs(latest_c_index - i)])  
+            if s[i] == c or i == len(s) - 1:
+                if stack:
+                    while stack:
+                        popped_element = stack.pop()
+                        if popped_element[1] == 0:
+                            pass
+                        elif popped_element[1] == None:
+                            diff = abs(latest_c_index - popped_element[0])
+                            popped_element[1] = diff
+                        else:
+                            popped_element[1] = min(abs(latest_c_index - popped_element[0]), popped_element[1])
+                        answer.append(popped_element)
         answer.sort()
 
         return [list[1] for list in answer]
