@@ -49,6 +49,10 @@ const images = [
 
 export default function SlidingWindow() {
   return (
+    <>
     <div>01-sliding-window</div>
+    
+
+    </>
   )
 }
