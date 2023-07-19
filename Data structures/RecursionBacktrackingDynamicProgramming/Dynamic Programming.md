@@ -28,9 +28,22 @@ B) Use subproblems together to solve larger problem
 4) Generalize the relationships
 5) Implement by solving sub-problems in order
 
+Another 5 step version:
+1. Coming up with a recursive solution to the problem
+2. Take a look at the parameters you are passing to the recursive function
+3. Check which parameters can change between calls; those are likely the coordinates in your dp array/matrix
+4. Understand how the recursive call generates its answers from the sub recursive calls, and try to put that into an equation
+5. Lastly, find the exit case of the recursive function that is the base case you need to build up from in DP.
+
 Longest Increasing Subsequence:
 ex. [3,1,8,2,5] -> 3 (1 -> 2 -> 5)
 
+
+Memoization
+Memoization refers to the technique of caching and reusing previously computed results. 
+
+Tabulation
+Tabulation is similar in the sense that it builds up a cache, but the approach is different. A tabulation algorithm focuses on filling the entries of the cache, until the target value has been reached.
 
 
 fibonacci 
@@ -41,3 +54,6 @@ fib(5)
 [1, 1, 2, 3, 5, 8]
 fib(0), fib(1)
 
+https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns
+https://leetcode.com/discuss/study-guide/662866/DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions
+https://www.youtube.com/watch?v=oBt53YbR9Kk
