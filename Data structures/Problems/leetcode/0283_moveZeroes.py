@@ -16,6 +16,18 @@ class Solution:
             if nums[counter] != 0:
                 counter += 1
         return nums
+    
+    def moveZeroes2(self,nums:list[int]) -> list[int]:
+        counter = 0
+        length = len(nums)
+        for i in range(length):
+            if nums[i] != 0:
+                nums[counter] = nums[i]
+                counter += 1
+        while counter < length:
+            nums[counter] = 0
+            counter += 1
+        return nums
 
 questions = {
     "q1": [[0,1,0,3,12],[1,3,12,0,0]],
@@ -27,5 +39,7 @@ questions = {
 sol = Solution()
 for key, question in questions.items():
     a = sol.moveZeroes(question[0])
+    a2 = sol.moveZeroes2(question[0])
     print(f"{key}) q: {question[0]} answer: {a} correct: {a == question[1]}")
+    print(f"{key}) q: {question[0]} answer: {a2} correct: {a2 == question[1]}")
 
