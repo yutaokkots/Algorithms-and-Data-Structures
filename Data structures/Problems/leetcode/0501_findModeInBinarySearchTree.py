@@ -18,6 +18,7 @@
 class Solution:
     def findMode(self, root):
         ## return the mode(s) -> frequently occuring elements
+
         memo = {}
         # Create a recursive function 
         def recursion(node):
@@ -32,11 +33,14 @@ class Solution:
                 recursion(node.left)
             if node.right:
                 recursion(node.right)
+
         ## call the function
         recursion(root)
 
         answer = []
+
         maxValue = max(memo.values())
+        
         for k, v in memo.items():
             if v == maxValue:
                 answer.append(int(k))

@@ -9,8 +9,32 @@ class Solution:
             else:
                 profit = max(profit, prices[i] - buy_price)
         return profit
+    
+    def maxProfit2(self, prices:list[int]) -> int:
+        # return maximum value that can be achieved 
+        # by iterating over prices list
+        max_val = 0
+        min_val = 10 ** 4
+        max_index = 0
+        min_index = 0
 
+        # iterating over the prices list
+        for index, price in enumerate(prices):
+            # make sure that max_val proceeds the min_val
+            # when price > max_val, then reassign price to max_val
+            if price > max_val:
+                max_val = price
+                max_index = index
+            # when price < min_val, then reassign price to min_val
+            if price < min_val:
+                min_val = price
+                min_index = index
 
+            if price > min_val and max_index < min_index:
+                max_val = price 
+                max_index = index
+
+        return max_val - min_val 
 
 
 
