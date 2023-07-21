@@ -1,3 +1,9 @@
+# Selection Sort:
+# 1. loop through the array, and for each index, run another function to find the index of the smallest number 
+# 2. use that index to pop the array from the origin array, and append to a new array. 
+
+# Time complexity:
+# O(n^2)
 class SelectionSort:
     def findSmallest(self, arr):
         smallest = arr[0]           #stores the smallest value
