@@ -14,7 +14,7 @@
 
 #
 # -> Heap Memory
-# special region i nthe RAM
+# special region in the RAM
 # dynamic meemory allocation takes place
 # size of heap is much larger than the size of stack memory
 # objects and reference types are stored in heap memory, but the reference is stored in the stack memory, pointing to the given object in heap memory
@@ -49,7 +49,7 @@
 # |______________|
 # | function_2   | <-- function_2 created on top of function_1 as a frame
 # |        i, f  |    
-# |______________|     <--- STACK
+# |______________|     <<<--- STACK
 # | function_1   |
 # |         d    |   <---- active functions and local variables stored in stack (built first)
 # |______________|  
