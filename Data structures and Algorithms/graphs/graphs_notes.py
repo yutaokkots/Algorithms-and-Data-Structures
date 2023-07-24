@@ -51,10 +51,10 @@ graph["jonny"] = []
 from collections import deque
 
 #create a new queue by instantiating a deque() class:
-search_queue = deque()
+#search_queue = deque()
 
 # add the neighbors relative to 'you' into the search queue
-search_queue += graph["you"]
+#search_queue += graph["you"]
 
 # search condition algorithm:
 def person_is_seller(name):
@@ -62,13 +62,32 @@ def person_is_seller(name):
 
 # Search algorithm:
 def search_algorithm():
+    search_queue = deque()
+    search_queue += graph["you"]
+    searched = [] #keep track of which users have been searched
     while search_queue:
         person = search_queue.popleft()
-        if person_is_seller(person):
-            print(f"{person} is a mango seller!")
-            return True
-        else:
-            search_queue += graph[person]
-        return False
+        if not person in searched:
+            if person_is_seller(person):
+                print(f"{person} is a mango seller!")
+                return True
+            else:
+                search_queue += graph[person]
+                searched.append(person)
+    return False
     
 print(search_algorithm())
+
+#Running Time for BFS
+# If you search your entire network, that means you’ll follow each edge 
+# (remember, an edge is the arrow or connection from one person to another). 
+
+# So the running time is at least O(number of edges).
+
+# You also keep a queue of every person to search. 
+# Adding one person to the queue takes constant time: O(1). 
+# Doing this for every person will take O(number of people) total. 
+# 
+# Breadth-first search takes O(number of people + number of edges), 
+# and it’s more commonly written as O(V+E) 
+# (V for number of vertices, E for number of edges).
