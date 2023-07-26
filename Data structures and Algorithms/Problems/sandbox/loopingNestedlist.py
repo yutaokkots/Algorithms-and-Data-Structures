@@ -12,27 +12,27 @@ stack_with_three = [[0,2,6],[1,1,3],[2,5,2],[3,6,8],[4,2,2],[5,3,1]]
 
 for i, h in enumerate(heights):
     print(f"index: {i}; height: {h}")
-# index: 0; height: 2
-# index: 1; height: 1
-# index: 2; height: 5
-# index: 3; height: 6
-# index: 4; height: 2
-# index: 5; height: 3
+# >>> index: 0; height: 2
+# >>> index: 1; height: 1
+# >>> index: 2; height: 5
+# >>> index: 3; height: 6
+# >>> index: 4; height: 2
+# >>> index: 5; height: 3
 
 for i, h in stack:
     print(f"index: {i}; height: {h}")
-# index: 0; height: 2
-# index: 1; height: 1
-# index: 2; height: 5
-# index: 3; height: 6
-# index: 4; height: 2
-# index: 5; height: 3
+# >>> index: 0; height: 2
+# >>> index: 1; height: 1
+# >>> index: 2; height: 5
+# >>> index: 3; height: 6
+# >>> index: 4; height: 2
+# >>> index: 5; height: 3
 
 for i, h, w in stack_with_three:
     print(f"index: {i}; height: {h}, width: {w}")
-# index: 0; height: 2, width: 6
-# index: 1; height: 1, width: 3
-# index: 2; height: 5, width: 2
-# index: 3; height: 6, width: 8
-# index: 4; height: 2, width: 2
-# index: 5; height: 3, width: 1
+# >>> index: 0; height: 2, width: 6
+# >>> index: 1; height: 1, width: 3
+# >>> index: 2; height: 5, width: 2
+# >>> index: 3; height: 6, width: 8
+# >>> index: 4; height: 2, width: 2
+# >>> index: 5; height: 3, width: 1
