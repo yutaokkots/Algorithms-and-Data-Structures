@@ -8,6 +8,8 @@
 # void update(int index, int val) Updates the value of nums[index] to be val.
 # int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive (i.e. nums[left] + nums[left + 1] + ... + nums[right]).
 
+from typing import List
+
 class NumArray:
 
     def __init__(self, nums: List[int]):
