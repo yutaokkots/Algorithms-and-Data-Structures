@@ -33,6 +33,7 @@ class Node:
             head = head.next
         output.append(head.val)
         return output
+    
 
     # head = Node(5)
     # head.add(2)
