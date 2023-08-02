@@ -40,4 +40,51 @@ class Solution:
 sol = Solution()
 for k, v in questions.items():
     answer = sol.trap(v["q"])
-    print(f"{k}) q: {v['q']}\na: {answer} \n{answer == v['a']} \n")
+    print(f"{k}) q: {v['q']}\na: {answer} \n{answer == v['a']} \n")\
+    
+
+
+        #    ###############
+        # ## Solution 1
+        # ######
+        # left = 0
+        # right = len(height) - 1
+        # left_max = 0
+        # right_max = 0
+        # accum = []
+
+        # while left < right:
+        #     if height[left] < left_max:
+        #         accum.append(left_max - height[left])
+        #     if height[right] < right_max:
+        #         accum.append(right_max - height[right])
+        #     left_max = max(left_max, height[left])
+        #     right_max = max(right_max, height[right])           
+
+        #     if height[left] >= height[right]:
+        #         right -= 1
+        #     elif height[right] > height[left]:
+        #         left += 1
+        # return sum(accum)
+
+        # ###############
+        # ## Solution 2
+        # ######
+                
+        # l=0
+        # r=len(height)-1
+        # lmax=height[l]
+        # rmax=height[r]
+        # res=0
+        
+        # while l<r:
+            
+        #     if lmax<rmax:
+        #         l+=1
+        #         lmax=max(lmax,height[l])
+        #         res+=lmax-height[l]
+        #     else:
+        #         r-=1
+        #         rmax=max(rmax,height[r])
+        #         res+=rmax-height[r]
+        # return res
