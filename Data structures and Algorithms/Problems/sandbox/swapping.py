@@ -16,7 +16,7 @@ print(f"x: {x}, y: {y}")
 
 # how else to swap variable (one-line)
 a = 1000
-b = 20
+b = 20  
 print(f"a: {a}, b: {b}")
 
 a, b = b, a         #### SWAP
