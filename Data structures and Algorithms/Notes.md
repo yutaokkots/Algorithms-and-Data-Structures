@@ -37,8 +37,6 @@ Maintainable
 Simple
 Correct
 
-
-
 ## BTY
 
 Better Than Yesterday

@@ -29,12 +29,107 @@
     <tr>
         <td>Vector / ArrayLists</td>
         <td>Quick Sort</td>
-        <td> Big O Time and Space</td>
+        <td>Big O Time and Space</td>
     </tr>
     <tr>
         <td>Hash Tables</td>
         <td></td>
         <td></td>
+    </tr>
+</table>
+
+# Python Data Types Overview
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>Type</th>
+        <th>Example</th>
+        <th>Immutability</th>
+    </tr>
+    <tr>
+        <td>integer</td>
+        <td>int</td>
+        <td>numeric</td>
+        <td>n = 5</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>floating point</td>
+        <td>float</td>
+        <td>numeric</td>
+        <td>pi = 3.14</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>complex</td>
+        <td>complex</td>
+        <td>numeric</td>
+        <td>z1 = 2 + 3j</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>String</td>
+        <td>str</td>
+        <td>text</td>
+        <td>s = "hello"</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>Bytes</td>
+        <td>bytes</td>
+        <td>text</td>
+        <td>binary_data = b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f'</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>Byte Arrays</td>
+        <td>bytearray</td>
+        <td>text</td>
+        <td>mutable_data = bytearray(b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f')</td>
+        <td>mutable</td>
+    </tr>
+    <tr>
+        <td>List</td>
+        <td>list</td>
+        <td>sequence</td>
+        <td>fruits = ["apple", "banana", "orange"]</td>
+        <td>mutable</td>
+    </tr>
+    <tr>
+        <td>Tuple</td>
+        <td>tuple</td>
+        <td>sequence</td>
+        <td>point = (1, 2)</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>Range</td>
+        <td>range</td>
+        <td>sequence</td>
+        <td>range(2,5)</td>
+        <td>immutable</td>
+    </tr>
+    <tr>
+        <td>dictionary</td>
+        <td>dict</td>
+        <td>mapping</td>
+        <td>range(2,5)</td>
+        <td>mutable</td>
+    </tr>
+    <tr>
+        <td>Set</td>
+        <td>set</td>
+        <td>mapping</td>
+        <td>new_set = set([1,2,3])</td>
+        <td>mutable</td>
+    </tr>
+    <tr>
+        <td>Frozen Set</td>
+        <td>frozenset</td>
+        <td>mapping</td>
+        <td>immutable_set = frozenset([1,2,3])</td>
+        <td>immutable</td>
     </tr>
 </table>
 
