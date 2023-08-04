@@ -85,7 +85,8 @@
         <td>Bytes</td>
         <td>bytes</td>
         <td>bytes(object, encoding(opt), errors(opt))</td>
-        <td>binary_data = b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f'</td>
+        <td>binary_data = b'\\\\\\\\x48\\\\\\\\x65
+        \\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f'</td>
         <td>immutable</td>
     </tr>
     <tr>
@@ -93,7 +94,8 @@
         <td>Byte Arrays</td>
         <td>bytearray</td>
         <td>bytearray(source(opt), encoding(opt), errors(opt))</td>
-        <td>mutable_data = bytearray(b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f')</td>
+        <td>mutable_data = bytearray(b'\\\\\\\\x48\\\\\\\\x65
+        \\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f')</td>
         <td>mutable</td>
     </tr>
     <tr>
