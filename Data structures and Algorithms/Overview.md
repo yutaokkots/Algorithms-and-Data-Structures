@@ -41,93 +41,93 @@
 # Python Data Types Overview
 <table>
     <tr>
-        <th></th>
-        <th></th>
         <th>Type</th>
+        <th>Name</th>
+        <th>Typing</th>
         <th>Example</th>
         <th>Immutability</th>
     </tr>
     <tr>
+        <td>numeric</td>
         <td>integer</td>
         <td>int</td>
-        <td>numeric</td>
         <td>n = 5</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>numeric</td>
         <td>floating point</td>
         <td>float</td>
-        <td>numeric</td>
         <td>pi = 3.14</td>
         <td>immutable</td>
     </tr>
     <tr>
-        <td>complex</td>
-        <td>complex</td>
         <td>numeric</td>
+        <td>complex</td>
+        <td>complex</td>
         <td>z1 = 2 + 3j</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>text</td>
         <td>String</td>
         <td>str</td>
-        <td>text</td>
         <td>s = "hello"</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>text</td>
         <td>Bytes</td>
         <td>bytes</td>
-        <td>text</td>
         <td>binary_data = b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f'</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>text</td>
         <td>Byte Arrays</td>
         <td>bytearray</td>
-        <td>text</td>
         <td>mutable_data = bytearray(b'\\\\\\\\x48\\\\\\\\x65\\\\\\\\x6c\\\\\\\\x6c\\\\\\\\x6f')</td>
         <td>mutable</td>
     </tr>
     <tr>
+        <td>sequence</td>
         <td>List</td>
         <td>list</td>
-        <td>sequence</td>
         <td>fruits = ["apple", "banana", "orange"]</td>
         <td>mutable</td>
     </tr>
     <tr>
+        <td>sequence</td>
         <td>Tuple</td>
         <td>tuple</td>
-        <td>sequence</td>
         <td>point = (1, 2)</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>sequence</td>
         <td>Range</td>
         <td>range</td>
-        <td>sequence</td>
         <td>range(2,5)</td>
         <td>immutable</td>
     </tr>
     <tr>
+        <td>mapping</td>
         <td>dictionary</td>
         <td>dict</td>
-        <td>mapping</td>
         <td>range(2,5)</td>
         <td>mutable</td>
     </tr>
     <tr>
+        <td>mapping</td>
         <td>Set</td>
         <td>set</td>
-        <td>mapping</td>
         <td>new_set = set([1,2,3])</td>
         <td>mutable</td>
     </tr>
     <tr>
+        <td>mapping</td>
         <td>Frozen Set</td>
         <td>frozenset</td>
-        <td>mapping</td>
         <td>immutable_set = frozenset([1,2,3])</td>
         <td>immutable</td>
     </tr>
