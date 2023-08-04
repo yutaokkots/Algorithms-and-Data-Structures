@@ -44,13 +44,13 @@
         <th>Type</th>
         <th>Name</th>
         <th>Typing</th>
-        <th>Call</th>
+        <th>Function</th>
         <th>Example</th>
         <th>Immutability</th>
     </tr>
     <tr>
         <td>numeric</td>
-        <td>integer</td>
+        <td>Integer</td>
         <td>int</td>
         <td>int(value, base(opt, default=10))</td>
         <td>n = 5</td>
@@ -58,7 +58,7 @@
     </tr>
     <tr>
         <td>numeric</td>
-        <td>floating point</td>
+        <td>Floating point</td>
         <td>float</td>
         <td>float(value)</td>
         <td>pi = 3.14</td>
@@ -66,7 +66,7 @@
     </tr>
     <tr>
         <td>numeric</td>
-        <td>complex</td>
+        <td>Complex</td>
         <td>complex</td>
         <td>complex(real, imaginary(opt))</td>
         <td>z1 = 2 + 3j</td>
@@ -124,7 +124,7 @@
     </tr>
     <tr>
         <td>mapping</td>
-        <td>dictionary</td>
+        <td>Dictionary</td>
         <td>dict</td>
         <td>dict(**kwargs), {}</td>
         <td>dict("first"=2,"second"=5)</td>
