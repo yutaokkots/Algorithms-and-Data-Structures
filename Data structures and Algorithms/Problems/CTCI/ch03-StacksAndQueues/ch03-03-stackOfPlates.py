@@ -62,7 +62,10 @@ class StackOfPlates():
         while len(self.stacks[rem_idx]) < self.limit:
             if rem_idx + 1 > self.stack_idx:
                 break
-            removed_element = self.stacks[rem_idx + 1].pop(0)
+            if self.stacks[rem_idx + 1] == []:
+                rem_idx -= 1
+            else:      
+                removed_element = self.stacks[rem_idx + 1].pop(0)
             self.stacks[rem_idx].append(removed_element)
             if len(self.stacks[rem_idx]) == self.limit:
                 rem_idx += 1
