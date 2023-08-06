@@ -4,6 +4,7 @@
 # push(), pop(), and min() should all operate in O(1) time
 
 from typing import List
+
 class StackMin():
     def __init__(self):
         self.stack = []
