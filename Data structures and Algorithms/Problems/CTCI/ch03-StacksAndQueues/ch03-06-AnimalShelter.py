@@ -12,7 +12,6 @@ class AnimalNode():
         self.order = order
         self.next = None
 
-
 class AnimalShelter():
     def __init__(self):
         self.animal_count = 0
@@ -20,32 +19,19 @@ class AnimalShelter():
         self.head_cat = None
 
     def reset_head(self, new_node):
-        
         pass
 
     def append_node(self, new_node):
         node = None
-        if new_node.val:
-            if self.head_dog == None:
-                self.head_dog = new_node
-                return
-            else:
-                node = self.head_dog 
-                # node.next = new_node
-        else:
-            if self.head_cat == None:
-                self.head_cat = new_node
-                return
-            else:
-                node = self.head_cat
-                # node.next = new_node
-
+        if new_node.val == 1 and self.head_dog == None:
+            self.head_dog = new_node
+            return
+        elif new_node.val == 0 and self.head_cat == None:
+            self.head_cat = new_node
+            return
+        node = self.head_dog if new_node.val == 1 else self.head_cat
         while node.next != None:
-            print(node.val)
             node = node.next
-            if node.next == None:
-                node.next = new_node
-                break
         node.next = new_node
 
     def enqueue(self, a_type:int):
@@ -69,23 +55,25 @@ class AnimalShelter():
         cat = []
         node_dog = self.head_dog
         node_cat = self.head_cat
-
-        # print(node_dog.val)
-        # print(node_dog.order)
-        # print(node_cat.val)
-        # print(node_cat.order)
-        
-        # while node_dog.next:
-        #     dog.append([node_dog.order, node_dog.val])
-        #     node_dog = node_dog.next
-        # while node_cat.next:
-        #     cat.append([node_cat.order, node_cat.val])
-        #     node_cat = node_cat.next
-        print(f"dog: {dog}\ncat: {cat}")
+        if node_dog != None:
+            while node_dog.next != None:
+                dog.append([node_dog.order, node_dog.val])
+                node_dog = node_dog.next
+            dog.append([node_dog.order, node_dog.val])
+        if node_cat != None:
+            while node_cat.next != None:
+                cat.append([node_cat.order, node_cat.val])
+                node_cat = node_cat.next
+            cat.append([node_cat.order, node_cat.val])
+        print(f"dog: {dog} cat: {cat}")
 
 animal_shelter = AnimalShelter()
 animal_shelter.enqueue(0)
 animal_shelter.enqueue(0)
+animal_shelter.enqueue(1)
+animal_shelter.enqueue(0)
+animal_shelter.enqueue(0)
+animal_shelter.enqueue(1)
 animal_shelter.enqueue(1)
 animal_shelter.enqueue(0)
 animal_shelter.enqueue(1)
