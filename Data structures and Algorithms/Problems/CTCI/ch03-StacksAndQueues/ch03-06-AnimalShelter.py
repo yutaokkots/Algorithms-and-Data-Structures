@@ -17,9 +17,13 @@ class AnimalShelter():
         self.animal_count = 0
         self.head_dog = None
         self.head_cat = None
+        self.animal_count_out = 0
+        
 
-    def reset_head(self, new_node):
-        pass
+    def reset_head(self, head):
+        if head.next:
+            head = head.next
+        return head
 
     def append_node(self, new_node):
         node = None
@@ -42,13 +46,36 @@ class AnimalShelter():
 
         
     def dequeueAny(self):
-        pass
+        animal = ""
+        number = 0
+        if self.head_dog.order < self.head_cat.order: 
+            animal = "dog"
+            number = self.head_dog.order
+            new_head = self.reset_head(self.head_dog)
+            self.head_dog = new_head
+        else:
+            animal = "cat"
+            number = self.head_cat.order
+            new_head = self.reset_head(self.head_cat)
+            self.head_cat = new_head
+            
+        self.animal_count_out += 1
+
+        print(f"Your {animal} #{number} is ready for adoption")
 
     def dequeueDog(self):
-        pass
+        animal = "dog"
+        number = self.head_dog.order
+        new_head = self.reset_head(self.head_dog)
+        self.head_dog = new_head
+        print(f"Your {animal} #{number} is ready for adoption")
 
     def dequeueCat(self):
-        pass
+        animal = "cat"
+        number = self.head_cat.order
+        new_head = self.reset_head(self.head_cat)
+        self.head_cat = new_head
+        print(f"Your {animal} #{number} is ready for adoption")
 
     def peekQueue(self):
         dog = []
@@ -77,5 +104,11 @@ animal_shelter.enqueue(1)
 animal_shelter.enqueue(1)
 animal_shelter.enqueue(0)
 animal_shelter.enqueue(1)
+animal_shelter.peekQueue()
+animal_shelter.dequeueAny()
+animal_shelter.dequeueCat()
+animal_shelter.dequeueDog()
+animal_shelter.dequeueCat()
+
 
 animal_shelter.peekQueue()
