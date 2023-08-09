@@ -67,8 +67,3 @@ A trie can check if a string is a valid string in O(K) time, where K is the leng
         <th>O(n)</th>
     </tr>
 </table>
-Algorithm	Average	Worst case
-Space	O(n)	O(n)
-Search	O(n)	O(n)
-Insert	O(n)	O(n)
-Delete	O(n)	O(n)
