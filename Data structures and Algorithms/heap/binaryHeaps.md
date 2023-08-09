@@ -67,8 +67,6 @@ When extracting from a min-heap
 2. Swap the minimum element with the last element in the heap (the bottom-most, right-most element)
 3. Bubble down the element
 
-
-
 ```
 step 1: replace min with 96
 
@@ -95,3 +93,5 @@ step 3: swap 32 and 96
       /   \     /   \
     88    90  [96]   74
 ```  
+
+Time complexity of the extraction/swap is O(logN), where N is number of nodes in heap
