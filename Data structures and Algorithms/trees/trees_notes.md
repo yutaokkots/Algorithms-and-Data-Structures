@@ -5,17 +5,20 @@ Not all trees are binary trees.
 
 Ex. This might be considered a Tree, or a Ternary Tree. 
 
+```
             8
           / | \
          4  6  10
        /  \      \
       2    1      20
+```
 
 ## Binary Tree vs Binary Search Tree
 
 A binary search tree is a binary tree in which every node fits
 as specific ordering property. This property must be true for each node, n.
 
+```
 binary search tree
 
             8
@@ -31,6 +34,7 @@ not a binary search tree
           4   10
          / \    \
         2   12    20
+```
 
 ## Balanced vs unbalanced
 
@@ -40,6 +44,7 @@ O(logn) times for insert and find
 
 ### Complete Binary Tree - a binary tree in which every level is fully filled, except the last level
 
+```
 not Complete                complete
 
              10                  10
@@ -47,9 +52,11 @@ not Complete                complete
           5      20           5      20   
         /   \      \        /  \    /  
        3     7      30     3    7  15
+```
 
 ### Full Binary Tree - a binary tree in which every node has either zero or two children
 
+```
 not a full binary tree      a full binary tree
 
              10                   10
@@ -59,6 +66,7 @@ not a full binary tree      a full binary tree
             12  3    7             3     7
                / \                / \ 
               9   18             9   18
+```
 
 https://leetcode.com/problems/all-possible-full-binary-trees/
 
@@ -67,9 +75,10 @@ https://leetcode.com/problems/all-possible-full-binary-trees/
 All perfect binary tree must have exactly (2^k - 1) nodes, where k is the number of levels. 
 perfect binary trees are rare - do not assume a binary tree is perfect. 
 
+```
              10
            /    \
           5      20
         /  \    /  \
        9   18  3    7
-
+```
