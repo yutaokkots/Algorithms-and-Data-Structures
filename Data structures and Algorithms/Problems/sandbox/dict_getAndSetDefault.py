@@ -35,3 +35,23 @@ for i in range(len(scores)):
 
 print(memo)
 # {1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
+
+
+s = "anagram"
+countS = {}
+
+
+
+#when i = 2
+for i in s:
+    countS[s[i]] = 1 + countS.get(s[i], 0)
+    print(countS)
+
+
+print(countS)
+
+countS = {
+    "a": 5,
+    "b": 5,
+
+}
