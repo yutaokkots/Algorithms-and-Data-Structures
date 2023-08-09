@@ -22,6 +22,7 @@ When inserting into a min-heap, always insert the element at the bottom.
 
 ```
 step 1: insert 2
+
              4
           /     \
         50        7
@@ -29,6 +30,7 @@ step 1: insert 2
     55    90   87    [2]
 
 step 2: swap 2 and 7
+
              4
           /     \
         50       [2]
@@ -36,6 +38,7 @@ step 2: swap 2 and 7
     55    90   87    7   
 
 step 3: swap 2 and 4
+
             [2]
           /     \
         50        4
@@ -68,6 +71,7 @@ When extracting from a min-heap
 
 ```
 step 1: replace min with 96
+
             [96]
           /     \
         50        23
@@ -76,6 +80,7 @@ step 1: replace min with 96
    /
 
 step 2: swap 23 and 96
+
              23
           /     \
         50       [96]
@@ -83,11 +88,10 @@ step 2: swap 23 and 96
     88    90   32    74
 
 step 3: swap 32 and 96
+
              23
           /     \
         50        32
       /   \     /   \
     88    90  [96]   74
-
-
 ```  
