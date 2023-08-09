@@ -76,6 +76,8 @@ All perfect binary tree must have exactly (2^k - 1) nodes, where k is the number
 perfect binary trees are rare - do not assume a binary tree is perfect. 
 
 ```
+    perfect binary tree
+    
              10
            /    \
           5      20
