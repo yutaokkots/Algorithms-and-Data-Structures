@@ -1,15 +1,58 @@
 # Breadth-First-Search (BFS) & Depth-First-Search (DFS)
 
+## Breadth-First Search
+
 Breadth-First-Search (BFS) can be used to fulfill the following:
 1) Is there a path from node A to ndoe B?
 2) What is the shortest path from node A to node B?
 
-## Breadth-First Search
 Points:
 1) Start BFS from any vertex. 
 2) When at a vertex, visit adjacent vertex in any order.
 3) When visiting a vertex, you must visit all adjacent vertices, before going to next vertex for exploration
 4) Select the next vertex to explore using a **queue**.
+
+> __Analogy__  
+> Imagine that a graph comprises balls and rubber bands. 
+> Let's say in the following graph, we want to start traversal of graph at vertex 0. 
+> ![image](./src_img/bfs_1.jpg)
+> 
+> Pull up on the vertex of choice, and allow the other vertices to fall. 
+> ![image](./src_img/bfs_2.jpg)
+> The above image shows a natural order for breadth first search
+
+When using BFS to find shortest path, start with a list that is the size of the graph to mark False or True which vertex has been visited.
+
+
+__Example__
+![image](./src_img/bfs_3.jpg)
+```
+# img -> grid, p -> pixel color
+
+def floodFill(img, row, col, p)
+    start - img[row][col]
+    queue = [(row, col)]
+    visited = set()
+
+    # while queue is not empty
+    while len(queue) > 0:   
+        row, col = queue.pop(0)
+        visited.add((row, col))
+        img[row][col] = p
+        for row, col in neighbors(img, row, col, start):
+            if (row, col) not in visited:
+                queue.append((row, col))
+    return img
+
+def neighbors(img, row, col, start):
+    indices = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+    return [(row, col) for row, col in indices if isValid(img, row, col) and img[row][col] == start]
+
+def isValid(img, row, col):
+    return row >= 0 and col >= 0 and row < len(img) and col < len(img[0])
+
+```
+
 
 ## Depth-First Search
 Points:
