@@ -15,17 +15,22 @@ Points:
 > __Analogy__  
 > Imagine that a graph comprises balls and rubber bands. 
 > Let's say in the following graph, we want to start traversal of graph at vertex 0. 
+> 
 > ![image](./src_img/bfs_1.jpg)
 > 
 > Pull up on the vertex of choice, and allow the other vertices to fall. 
+> 
 > ![image](./src_img/bfs_2.jpg)
+> 
 > The above image shows a natural order for breadth first search
 
 When using BFS to find shortest path, start with a list that is the size of the graph to mark False or True which vertex has been visited.
 
 
 __Example__
+
 ![image](./src_img/bfs_3.jpg)
+
 ```
 # img -> grid, p -> pixel color
 
@@ -53,8 +58,8 @@ def isValid(img, row, col):
 
 ```
 
-
 ## Depth-First Search
+
 Points:
 1) Start BFS from any vertex. 
 2) When visiting a new vertex, suspend the exploration of the current vertex, and explore that new vertex first. 
