@@ -27,7 +27,26 @@ Points:
 When using BFS to find shortest path, start with a list that is the size of the graph to mark False or True which vertex has been visited.
 
 
-__Example__
+__Example 1__
+
+![image](./src_img/bfs_4.jpg)
+
+```
+marked = [False] * G.size()
+def bfs(G, v):
+    queue = [v]
+    while len(queue) > 0:
+        v - queue.pop(0)
+        if not marked[v]:
+            visit (v)
+            marked[v] = True
+            for w in G.neighbors(v):
+                if not marked{w}:
+                    queue.append(w)
+```
+
+__Example 2__
+
 
 ![image](./src_img/bfs_3.jpg)
 
