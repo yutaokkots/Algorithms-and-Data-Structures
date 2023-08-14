@@ -3,7 +3,7 @@
 ## Breadth-First Search
 
 Breadth-First-Search (BFS) can be used to fulfill the following:
-1) Is there a path from node A to ndoe B?
+1) Is there a path from node A to node B?
 2) What is the shortest path from node A to node B?
 
 Points:
@@ -12,7 +12,7 @@ Points:
 3) When visiting a vertex, you must visit all adjacent vertices, before going to next vertex for exploration
 4) Select the next vertex to explore using a **queue**.
 
-> __Analogy__  
+> __Analogy for visualizing the order of graph exploration__  
 > Imagine that a graph comprises balls and rubber bands. 
 > Let's say in the following graph, we want to start traversal of graph at vertex 0. 
 > 
