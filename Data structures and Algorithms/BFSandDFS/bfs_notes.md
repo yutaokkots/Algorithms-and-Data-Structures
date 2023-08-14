@@ -1,5 +1,24 @@
 # Breadth-First-Search (BFS) & Depth-First-Search (DFS)
 
+### Difference between DFS and BFS
+
+In the following graph, BFS and DFS approach the vertices differently. 
+
+![image](./src_img/bfs_dfs_1.jpg)
+
+| BFS    |DFS                            | 
+| :----  | :----                         | 
+| Node 0 | Node 0                        | 
+| Node 1 | &emsp;  Node 1                | 
+| Node 4 | &emsp;&emsp;    Node 3        | 
+| Node 5 | &emsp;&emsp;&emsp;   Node 2   | 
+| Node 3 | &emsp;&emsp;&emsp;  Node 4    | 
+| Node 2 | Node 5                        | 
+
+The general order of operation for a BFS (using queue) and DFS (using stack) are as follows:
+
+![image](./src_img/bfs_dfs_2.jpg)
+
 ## Breadth-First Search
 
 Breadth-First-Search (BFS) can be used to fulfill the following:
@@ -36,7 +55,7 @@ marked = [False] * G.size()
 def bfs(G, v):
     queue = [v]
     while len(queue) > 0:
-        v - queue.pop(0)
+        v = queue.pop(0)
         if not marked[v]:
             visit (v)
             marked[v] = True
@@ -54,7 +73,7 @@ __Example 2__
 # img -> grid, p -> pixel color
 
 def floodFill(img, row, col, p)
-    start - img[row][col]
+    start = img[row][col]
     queue = [(row, col)]
     visited = set()
 
@@ -78,6 +97,11 @@ def isValid(img, row, col):
 ```
 
 ## Depth-First Search
+
+Depth-First-Search (BFS) can be used to fulfill the following:
+1) Is there a cycle in a graph?
+2) Is there a path from node A to node B? What are all possibilities?
+3) One solution puzzles - sudoku, etc. 
 
 Points:
 1) Start BFS from any vertex. 
