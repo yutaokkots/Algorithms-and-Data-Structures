@@ -15,6 +15,9 @@ import collections
 
 ####### ####### #######
 ## default_factory = list
+##
+## the difference between a collections.defaultdict and {} to initialize a dictionary is:
+## an instantiated collections.defaultdict() allows adding a value to a key if the key doesn't exist
 
 d_list = collections.defaultdict(list)
 
