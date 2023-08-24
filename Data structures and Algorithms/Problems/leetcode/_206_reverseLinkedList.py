@@ -38,3 +38,26 @@ class Solution:
             head = next_            
         head.next = previous_head
         return head
+
+    def reverseList3(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, curr = None, head
+
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        return prev
+    
+
+    def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head:
+            return None
+        newHead = head
+        if head.next:
+            newHead = self.reverseList(head.next)
+            head.next.next = head
+
+        head.next = None
+
+        return newHead
