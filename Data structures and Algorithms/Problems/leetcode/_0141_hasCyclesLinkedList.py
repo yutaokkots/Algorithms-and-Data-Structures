@@ -58,7 +58,6 @@ class Solution:
             if pointer_1 == pointer_2:
                 return True
         return False
-    
 
     def hasCycle4(self, head: Optional[ListNode]) -> bool:
         memo = {}
