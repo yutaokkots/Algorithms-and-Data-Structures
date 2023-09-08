@@ -49,3 +49,23 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         return True
+    
+    def hasCycle3(self, head: Optional[ListNode]) -> bool:
+        pointer_1 = pointer_2 = head
+        while pointer_2 and pointer_2.next:
+            pointer_1 = pointer_1.next
+            pointer_2 = pointer_2.next.next
+            if pointer_1 == pointer_2:
+                return True
+        return False
+    
+
+    def hasCycle4(self, head: Optional[ListNode]) -> bool:
+        memo = {}
+        while head:
+            memo[head] = 1 + memo.setdefault(head, 0)
+            if memo[head] > 1:
+                return True
+
+            head = head.next
+        return False
