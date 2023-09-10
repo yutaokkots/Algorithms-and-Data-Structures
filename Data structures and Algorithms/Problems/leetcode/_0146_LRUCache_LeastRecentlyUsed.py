@@ -32,16 +32,53 @@ lRUCache.get(4);    // return 4
 
 '''
 
-class LRUCache:
+class Node():
+    def __init__(self, key, value):
+        self.key = key
+        self.val = value
+        self.prev = None
+        self.next = None
 
+class LRUCache:
+    # ["LRUCache","put","put","get","put","get","put","get","get","get"]
+    # [[2],       [1,1],[2,2],[1],  [3,3], [2], [4,4],[1],  [3],   [4]]
     def __init__(self, capacity: int):
-        
+        self.cap = capacity
+        self.cache = {}
+        self.left = Node(0, 0)
+        self.right = Node(0, 0)
+        self.left.next = self.right
+        self.right.prev = self.left
+
+    def remove(self, node):
+        prv = node.prev
+        nxt = node.next
+        prv.next = nxt
+        nxt.prev = prv
+
+    def insert(self, node):
+        prv = self.right.prev
+        nxt = self.right
+        prv.next = nxt.prev = node
+        node.next = nxt 
+        node.prev = prv
 
     def get(self, key: int) -> int:
-        pass
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.insert(self.cache[key])
+            return self.cache[key].val
+        return -1
 
     def put(self, key: int, value: int) -> None:
-        pass
+        if key in self.cache:
+            self.remove(self.cache[key])
+        self.cache[key] = Node(key, value)
+        self.insert(self.cache[key])
+        if len(self.cache) > self.cap:
+            lru = self.left.next 
+            self.remove(lru)
+            del self.cache[lru.key]
 
 
 # Your LRUCache object will be instantiated and called as such:
