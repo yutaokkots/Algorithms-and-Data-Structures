@@ -82,3 +82,31 @@ class Solution:
             prev = node
 
         return head
+
+'''
+const node9 = new ListNode(9)
+const node8 = new ListNode(8, node9)
+const node7 = new ListNode(7, node8)
+const node6 = new ListNode(6, node7)
+const node5 = new ListNode(5, node6)
+const node4 = new ListNode(4, node5)
+const node3 = new ListNode(3, node4)
+const node2 = new ListNode(2, node3)
+const node1 = new ListNode(1, node2)
+const node0 = new ListNode(0, node1)
+
+const allNodeVals = (linkedList) => {
+    console.log(linkedList.val)
+    // write code here
+
+}
+
+allNodeVals(node0)
+
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+let fourth_index = array[4]
+console.log(fourth_index)
+
+
+
+'''
