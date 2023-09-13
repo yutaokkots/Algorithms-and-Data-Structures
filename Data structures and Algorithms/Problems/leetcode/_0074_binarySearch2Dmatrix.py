@@ -20,4 +20,27 @@ Output: false
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        # do a search
+        row_start, row_end = 0, len(matrix) - 1
+        col_start, col_end = 0, len(matrix[row_start]) - 1
+        middle = None
+        while row_start <= row_end:
+            middle = (row_start + row_end) // 2
+            if matrix[middle][col_start] <= target <= matrix[middle][col_end]:
+                break
+            elif target < matrix[middle][col_start]:
+                row_end = middle - 1
+            elif matrix[middle][col_end] < target:
+                row_start = middle + 1
         
+        target_lst = matrix[middle]
+        while col_start <= col_end:
+            mid = (col_start + col_end) // 2
+            if target == target_lst[mid]:
+                return True
+            elif target < target_lst[mid]:
+                col_end = mid - 1
+            elif target > target_lst[mid]:
+                col_start = mid + 1
+        
+        return False
