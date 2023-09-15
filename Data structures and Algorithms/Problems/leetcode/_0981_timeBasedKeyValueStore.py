@@ -1,4 +1,6 @@
 '''
+datastructure -> binary search
+
 981. Time Based Key-Value Store
 Medium
 
@@ -27,5 +29,47 @@ Explanation
 6. timeMap.get("foo", 4);         // return "bar2"
 7. timeMap.get("foo", 5);         // return "bar2"
 
+1. {}
+2. {"foo": ["bar", 1]} SET
+3. {"foo": ["bar", 1]} GET "foo" at 1 -> "bar"
+4. {"foo": ["bar", 1]} GET "foo" at 3 -> "bar"
+5. {"foo": [["bar", 1], ["bar2", 4]]} SET
+6. {"foo": [["bar", 1], ["bar2", 4]]} GET "foo" at 4 -> "bar2"
+7. {"foo": [["bar", 1], ["bar2", 4]]} GET "foo" at 5 -> "bar2" 
 
+Example 2:
+
+Input
+["TimeMap","set","set","get","get","get","get","get"]
+[[],["love","high",10],["love","low",20],["love",5],["love",10],["love",15],["love",20],["love",25]]
+Output
+[null,null,null,"","high","high","low","low"]
 '''
+
+class TimeMap:
+    def __init__(self):
+        self.hash_map = {}
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        if key not in self.hash_map:
+            self.hash_map[key] = []
+        self.hash_map[key].append([timestamp, value])
+
+    def get(self, key: str, timestamp: int) -> str:
+        if key not in self.hash_map:
+            return ""     
+        values_lst = self.hash_map[key]
+        value = self.binary_search(values_lst, timestamp)
+        return value
+
+    def binary_search(self, lst: list, target: int):
+        left, right = 0, len(lst) -1
+        res = ""
+        while left <= right:
+            mid = (left + right) // 2
+            if lst[mid][0] <= target:
+                res = lst[mid][1]
+                left = mid + 1
+            else:
+                right = mid - 1
+        return res
