@@ -5,6 +5,7 @@
 # Output: [1,2]
 
 from typing import List
+from collections import Counter
 
 class Solution:
     # first solution using hashmap
@@ -44,6 +45,14 @@ class Solution:
         answer = [heapq.heappop(heap)[1] for _ in range(k)]
         return answer
 
+
+    def topKFrequentCounter(self,nums: List[int], k: int) -> List[int]:
+        counted_memo = Counter(nums)
+        most_common = counted_memo.most_common(k)
+        answer = []
+        for n in most_common:
+            answer.append(n[0])
+        return answer
 
 nums = [1,1,1,2,2,3,4,5,3,3,2,5,5,5,1,5,12]
 k = 2
