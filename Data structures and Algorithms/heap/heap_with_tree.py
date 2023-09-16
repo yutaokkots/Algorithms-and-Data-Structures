@@ -30,7 +30,8 @@ class Heap:
             node = Node(val)
             self.heap = node
         else:
-            
+            heap
+
 
     def heappop(self):
 
