@@ -24,3 +24,49 @@ Input: root = [2,1], p = 2, q = 1
 Output: 2
 '''
 
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+
+        if root.val == q.val or root.val == p.val:
+            return root
+        
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+
+        if not left:
+            return right
+        if not right:
+            return left
+
+        return root
+
+class Solution2:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+     
+        def dfs(node):
+            if not node:
+                return 
+
+            if (node.val < p.val and node.val > q.val 
+                or node.val > p.val and node.val < q.val 
+                or node.val == p.val 
+                or node.val == q.val):
+                return node
+
+            elif node.val < p.val and node.val < q.val:
+                return dfs(node.right)
+            elif node.val > p.val and node.val > q.val:
+                return dfs(node.left)
+
+        return dfs(root)
