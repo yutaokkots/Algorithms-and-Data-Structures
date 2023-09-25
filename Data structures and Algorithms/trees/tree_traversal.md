@@ -2,10 +2,17 @@
 
 Be able to:
 1. traversal in-order
-2. traversal post-order
-3. traversal pre-order
+2. traversal pre-order
+3. traversal post-order
 
-### In-order traversal
+
+| In-order | Pre-order | Post-order |
+| -------- | --------  | --------   |
+| left branch -> current node -> right branch | current node -> left branch / right branch | child nodes -> current node |
+| 'in-order' because the nodes are visited in ascending order |  'pre-order' because the current node is visited before its children | 'post-order' because the root node is visited after the children |
+
+
+## In-order traversal
 
 left branch -> current node -> right branch
 
@@ -34,7 +41,7 @@ def inOrderTraversal(node):
         inOrderTraversal(node.right)
 ```
 
-### Pre-order traversal
+## Pre-order traversal
 
 current node -> left branch / right branch
 
@@ -63,12 +70,12 @@ def preOrderTraversal(node):
         preOrderTraversal(node.right)
 ```
 
-### Post-order traversal
+## Post-order traversal
 
 child nodes -> current node
 Visit the child nodes before visiting the current node
-It is called 'pre-order' because the child nodes are visited before the current node. 
-In a post-order traversal, the root is always visisted last. 
+It is called 'post-order' because the root node is visited after the children. 
+In a post-order traversal, the root is always visited last. 
 
 ```
 >>> Java
