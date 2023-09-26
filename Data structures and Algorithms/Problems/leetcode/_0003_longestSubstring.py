@@ -1,7 +1,31 @@
-# 0003 - longest substring without repeating characters
-# Given a string s, find the length of the longest 
-# substring
-# without repeating characters.
+'''
+3. Longest substring without repeating characters
+Given a string s, find the length of the longest 
+substring
+without repeating characters.
+
+
+Example 1
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Example 2
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+
+Example 3
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+Example 4
+# "pwwkew"
+output = 3
+'''
+
 
 
 class Solution():
@@ -28,17 +52,17 @@ class Solution():
     
     def lengthOfLongestSubstring2(self, s: str) -> int:
         left = 0
-        max_value = 0
-        val_set = set()
+        max_str = 0
+        str_set = set()
+
         for right in range(len(s)):
-            while s[right] in val_set:
-                max_value = max(max_value, len(val_set))
-                val_set.discard(s[left])      
+            while s[right] in str_set:
+                str_set.discard(s[left])
                 left += 1
+            str_set.add(s[right])
+            max_str = max(max_str, right-left+1)
 
-            val_set.add(s[right])
-
-        return max_value
+        return max_str
 
 str_1 = "abcabcbb"
 str_2 = "bbbbb"
@@ -58,22 +82,3 @@ print(a3)
 
 
 
-# Example 1
-# Input: s = "abcabcbb"
-# Output: 3
-# Explanation: The answer is "abc", with the length of 3.
-
-# Example 2
-# Input: s = "bbbbb"
-# Output: 1
-# Explanation: The answer is "b", with the length of 1.
-
-# Example 3
-# Input: s = "pwwkew"
-# Output: 3
-# Explanation: The answer is "wke", with the length of 3.
-# Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
-# Example 4
-# # "pwwkew"
-# output = 3
