@@ -8,10 +8,11 @@ class Node:
     def __init__(self, value, neighbors=None):
         self.value = value
         #self.neighbors = []
-        if neighbors is None:
-            self.neighbors = []
-        else:
-            self.neighbors = neighbors
+        self.neighbors = [] if neighbors is None else neighbors
+        # if neighbors is None:
+        #     self.neighbors = []
+        # else:
+        #     self.neighbors = neighbors
 
     def has_neighbors(self):            #returns true if vertex is connected with at least one vertex
         if len(self.neighbors) == 0:
@@ -31,10 +32,11 @@ class Node:
 
 class Graph:
     def __init__(self, nodes=None):
-        if nodes is None:
-            self.notes = []
-        else:
-            self.nodes = nodes
+        self.nodes = [] if nodes is None else nodes
+        # if nodes is None:
+        #     self.nodes = []
+        # else:
+        #     self.nodes = nodes
     
     def add_node(self, value, neighbors=None):      # adds a new node(vertex) to the graph
         self.nodes.append(Node(value, neighbors))
@@ -42,16 +44,16 @@ class Graph:
     def find_node(self, value):                     #returns true if node with given value exists
         for node in self.nodes:
             if node.value == value:
-                return True
-        return False
+                return node
+        return None
     
     def add_edge(self, value1, value2, weight=1):
         node1 = self.find_node(value1)
         node2 = self.find_node(value2)
 
-        if (node1 is not None) and (node2 is not None):
-            node1.add_neighbor((node2, weight))  
-            node2.add_neighbor((node1, weight))  
+        if node1 and node2:
+            node1.add_neighbor((value2, weight))  
+            node2.add_neighbor((value1, weight))  
         else:
             print("Error:one or more nodes were not found")
 
