@@ -57,7 +57,7 @@ class Solution:
         return prev
     
 
-    def reverseList2(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList4(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
             return None
         newHead = head

@@ -29,9 +29,9 @@ class TreeNode(object):
 class Codec:
     def serialize(self, root):
         """Encodes a tree to a single string.
+
         :type root: TreeNode
         :rtype: str
-
         """
         self.result = []
         self.dfs(root)
@@ -46,6 +46,11 @@ class Codec:
         self.dfs(node.right)   
 
     def deserialize(self, data):
+        """Decodes encoded data to tree.
+
+        :type data: str
+        :rtype: TreeNode
+        """
         self.values = data.split(",")
         self.i = 0
         return self.des_dfs()
@@ -61,8 +66,4 @@ class Codec:
         return node
     
 
-        """Decodes your encoded data to tree.
-        :type data: str
-        :rtype: TreeNode
-        """
         
