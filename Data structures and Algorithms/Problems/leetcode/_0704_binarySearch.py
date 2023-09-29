@@ -18,6 +18,8 @@ Output: -1
 Explanation: 2 does not exist in nums so return -1
 '''
 
+from typing import List
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1

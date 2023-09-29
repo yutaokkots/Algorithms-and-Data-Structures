@@ -3,6 +3,8 @@
 
 # Return the average salary of employees excluding the minimum and maximum salary. Answers within 10-5 of the actual answer will be accepted.
 
+from typing import List
+
 class Solution:
     def average(self, salary: List[int]) -> float:
         salary.sort()

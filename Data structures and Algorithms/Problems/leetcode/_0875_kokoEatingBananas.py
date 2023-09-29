@@ -25,6 +25,8 @@ Input: piles = [30,11,23,4,20], h = 6
 Output: 23
 
 '''
+import math
+from typing import List
 
 class Solution():
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
