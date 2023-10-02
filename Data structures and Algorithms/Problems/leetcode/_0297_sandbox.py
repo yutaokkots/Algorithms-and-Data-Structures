@@ -1,5 +1,4 @@
-'''
-Sandbox to test the serialize and deserialize methods from LC 297
+''' Sandbox to test the serialize and deserialize methods from LC 297
 
                 7
               /   \
@@ -8,7 +7,6 @@ Sandbox to test the serialize and deserialize methods from LC 297
         2     5   8    12
       /  \     \     /   \
      1    3     6   10    13    
-
 '''
 from TreeNode import TreeNode 
 from typing import Optional

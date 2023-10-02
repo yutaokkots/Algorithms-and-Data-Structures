@@ -18,6 +18,7 @@ Example 2:
 Input: root = []
 Output: []
 '''
+from typing import Optional
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -27,43 +28,59 @@ class TreeNode(object):
         self.right = None
 
 class Codec:
-    def serialize(self, root):
-        """Encodes a tree to a single string.
-
+    def serializer(self, root:Optional[TreeNode]) -> str:
+        ''' Encodes a tree to a string
+        
         :type root: TreeNode
         :rtype: str
-        """
-        self.result = []
-        self.dfs(root)
-        return ",".join(self.result)
+        '''
 
-    def dfs(self, node):
-        if not node:
-            self.result.append("N")
-            return
-        self.result.append(str(node.val))
-        self.dfs(node.left)   
-        self.dfs(node.right)   
-
-    def deserialize(self, data):
-        """Decodes encoded data to tree.
-
-        :type data: str
-        :rtype: TreeNode
-        """
-        self.values = data.split(",")
-        self.i = 0
-        return self.des_dfs()
-
-    def des_dfs(self):
-        if self.values[self.i] == "N":
-            self.i += 1
-            return None
-        node = TreeNode(int(self.values[self.i]))
-        self.i += 1
-        node.left = self.des_dfs()
-        node.right = self.des_dfs()
-        return node
+        self.serialized_lst:list = []
+        self.dfs_serializer(root)
+        return ",".join(self.serialized_lst)
     
+    def dfs_serializer(self, node:Optional[TreeNode]) -> None:
+        ''' Recursive function that visits each node and saves the node value to a global list.
+        
+        :type node: TreeNode
+        :rtype: None
+        '''
 
+        # if node does not exist, then append "N" to indicate None type. 
+        if not node:
+            self.serialized_lst.append("N")
+            return
+        node_value = str(node.val)
+        self.serialized_lst.append(node_value)
+        self.dfs_serializer(node.left)
+        self.dfs_serializer(node.right)
+
+    def deserializer(self, str_data):
+        ''' Decodes a string to a tree.
+        
+        :type str_data: str
+        :rtype: TreeNode
+        '''
+
+        self.deserialized_lst = str_data.split(",")
+        self.index = 0
+        return self.dfs_deserializer()
+    
+    def dfs_deserializer(self) -> TreeNode:
+        ''' Recursive function that increments through a list, and creates a new node. 
+
+        :rtype: TreeNode
+        '''
+
+        # Edge case that increments the index if there is "N" in the string
+        if self.deserialized_lst[self.index] == "N":
+            self.index += 1
+            return None
+        node_value = self.deserialized_lst[self.index]
+        node = TreeNode(node_value)
+        self.index += 1
+        # Recursive portion that turns the left node or right node the result of the function. 
+        node.left = self.dfs_deserializer()
+        node.right = self.dfs_deserializer()
+        return node
         
