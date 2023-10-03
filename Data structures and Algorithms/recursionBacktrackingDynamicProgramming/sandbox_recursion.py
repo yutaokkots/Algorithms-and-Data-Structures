@@ -68,5 +68,74 @@ print(ans2)
 class SolutionCombinationSum:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         answer = []
+        permutation = []
 
+        def backtrack(i):
+            if sum(permutation) == target:
+                answer.append(permutation.copy())
+                return
+            if i >= len(candidates) or sum(permutation) > target:
+                return
+            permutation.append(candidates[i])
+            backtrack(i)
+
+            permutation.pop()
+            backtrack(i + 1)
+        backtrack(0)
         return answer
+    
+lst2 = [2, 3, 5]
+t = 8
+s3 = SolutionCombinationSum()
+ans3 = s3.combinationSum(lst2, t)
+print(ans3)
+## [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+
+'''
+[]
+[2]
+[2, 2]
+[2, 2, 2]
+[2, 2, 2, 2]
+[2, 2, 2]
+[2, 2, 2, 3]
+[2, 2, 2]
+[2, 2, 2, 5]
+[2, 2, 2]
+[2, 2]
+[2, 2, 3]
+[2, 2, 3, 3]
+[2, 2, 3]
+[2, 2, 3, 5]
+[2, 2, 3]
+[2, 2]
+[2, 2, 5]
+[2, 2]
+[2]
+[2, 3]
+[2, 3, 3]
+[2, 3]
+[2, 3, 5]
+[2, 3]
+[2]
+[2, 5]
+[2, 5, 5]
+[2, 5]
+[2]
+[]
+[3]
+[3, 3]
+[3, 3, 3]
+[3, 3]
+[3, 3, 5]
+[3, 3]
+[3]
+[3, 5]
+[3]
+[]
+[5]
+[5, 5]
+[5]
+[]
+
+'''

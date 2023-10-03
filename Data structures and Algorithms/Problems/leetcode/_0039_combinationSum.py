@@ -32,22 +32,63 @@ Output: []
 from typing import List
 
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        unique_combinations = []
+    def combinationSum1(self, candidates: List[int], target: int) -> List[List[int]]:
+        answer = []
+        permutation = []
 
-        def recursive(i, current, total):
+        def backtrack(i):
+            if sum(permutation) == target:
+                answer.append(permutation[:])
+                return
+            if i >= len(candidates) or sum(permutation) > target:
+                return
+
+            permutation.append(candidates[i])
+            backtrack(i)
+
+            permutation.pop()
+            backtrack(i + 1)
+
+        backtrack(0)
+
+        return answer
+    
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        answer = []
+
+        def backtrack(i, current):
+            if sum(current) == target:
+                answer.append(current[:])
+                return
+            if i >= len(candidates) or sum(current) > target:
+                return
+
+            current.append(candidates[i])
+            backtrack(i, current)
+
+            current.pop()
+            backtrack(i + 1, current)
+
+        backtrack(0, [])
+
+        return answer
+
+    def combinationSum3(self, candidates: List[int], target: int) -> List[List[int]]:
+        answer = []
+
+        def backtrack(i, current, total):
             if total == target:
-                unique_combinations.append(current.copy())
+                answer.append(current.copy())
                 return
             if i >= len(candidates) or total > target:
                 return
 
             current.append(candidates[i])
-            recursive(i, current, total + candidates[i])
+            backtrack(i, current, total + candidates[i])
 
             current.pop()
-            recursive(i + 1, current, total)
+            backtrack(i + 1, current, total)
 
-        recursive(0, [], 0)
+        backtrack(0, [], 0)
 
-        return unique_combinations
+        return answer
