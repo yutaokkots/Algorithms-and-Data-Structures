@@ -17,6 +17,10 @@ Example 2:
 
 Input: nums = [0]
 Output: [[],[0]]
+
+Constraints:
+
+
 '''
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:

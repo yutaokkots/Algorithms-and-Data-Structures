@@ -4,6 +4,9 @@ from
     LC 78 - Subsets
     LC 39 - Combination Sum
     LC 46 - Permutations
+    LC 90 - Subsets II
+    LC 40 - Combination Sum II
+
 
 '''
 
@@ -126,7 +129,36 @@ ans3 = s3.combinationSum(lst2, t)
 print(ans3)
 ## [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
 
+
+class SolutionCombinationSumII:
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort()
+        answer = []
+        permutation = []
+
+        def backtrack(i):
+            if sum(permutation) == target:
+                answer.append(permutation.copy())
+            if sum(permutation) >= target:
+                return
+            
+            prev = -1
+            for idx in range(i, len(candidates)):
+                if candidates[idx] == prev:
+                    continue
+                permutation.append(candidates[idx])
+                backtrack(idx + 1)
+                permutation.pop()
+                prev = candidates[idx]
+
+        backtrack(0)
+        return answer
+
+
 '''
+
+for LC Solution Combination Sum, if the 'permutation' was printed with each loop:
+
 []
 [2]
 [2, 2]
