@@ -26,16 +26,16 @@ class Solution:
         answer = []
         subset = []
 
-        def recursive(i):
+        def backtrack(i):
             if i >= len(nums):
                 answer.append(subset.copy())
                 return
             subset.append(nums[i])
-            recursive(i + 1)
+            backtrack(i + 1)
             subset.pop()
-            recursive(i + 1)
+            backtrack(i + 1)
 
-        recursive(0)
+        backtrack(0)
 
         return answer
             
