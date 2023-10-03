@@ -33,11 +33,46 @@ class SolutionSubset:
         return answer
 
 lst1 = ["a", "b", "c"]
+lst3 = [4,4,4,1,4]
 s1 = SolutionSubset()
-ans = s1.subsets(lst1)
+ans_1_1 = s1.subsets(lst1)
+ans_1_2 = s1.subsets(lst3)
 ## [['a', 'b', 'c'], ['a', 'b'], ['a', 'c'], ['a'], ['b', 'c'], ['b'], ['c'], []]
 
-print(ans)
+print(ans_1_1)
+print(ans_1_2)
+
+class SolutionSubsetII:
+    def subsetWithDup(self, nums: List[any]) -> List[List[any]]:
+        answer = []
+        subset = []
+        nums.sort()
+
+        def backtrack(i):
+            if i == len(nums):
+                answer.append(subset.copy())
+                return
+        
+            subset.append(nums[i])
+            backtrack(i + 1)
+            subset.pop()
+
+            while i + 1 < len(nums) and nums[i] == nums[i + 1]:
+                i += 1
+            backtrack(i + 1)
+
+        backtrack(0)
+
+        return answer
+
+subset_2 = SolutionSubsetII()
+ans_2_1 = subset_2.subsetWithDup(lst1)
+## [['a', 'b', 'c'], ['a', 'b'], ['a', 'c'], ['a'], ['b', 'c'], ['b'], ['c'], []]
+ans_2_2 = subset_2.subsetWithDup(lst3)
+## [[1, 4, 4, 4, 4], [1, 4, 4, 4], [1, 4, 4], [1, 4], [1], [4, 4, 4, 4], [4, 4, 4], [4, 4], [4], []]
+
+print(ans_2_1)
+print(ans_2_2)
 
 class SolutionPermutations:
     def permute(self, nums: List[any]) -> List[List[any]]: 
