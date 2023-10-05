@@ -50,6 +50,26 @@ class Solution2:
 
         return one
 
+
+class Solution3:
+    def climbStairs(self, n: int) -> int:
+        if n == 0 or n == 1:
+            return 1
+    
+        # Create a table to store results for subproblems.
+        dp = [0] * (n + 1)
+        
+        # Base cases
+        dp[0] = 1
+        dp[1] = 1
+        
+        # Fill in the table iteratively
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        
+        # The final result is in dp[n]
+        return dp[n]
+
 sol1 = Solution1()
 answer1 = sol1.climbStairs(5)
 print(answer1)
