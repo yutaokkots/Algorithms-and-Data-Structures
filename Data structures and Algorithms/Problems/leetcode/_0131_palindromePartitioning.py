@@ -23,8 +23,8 @@ s contains only lowercase English letters.
 
 '''
 
-
 from typing import List
+
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
         res, part = [], []
@@ -48,3 +48,10 @@ class Solution:
                 return False
             l, r = l + 1, r - 1
         return True
+
+
+sol = Solution()
+
+ans = sol.partition("ababraba")
+print(ans)
+## [['a', 'b', 'a', 'b', 'r', 'a', 'b', 'a'], ['a', 'b', 'a', 'b', 'r', 'aba'], ['a', 'bab', 'r', 'a', 'b', 'a'], ['a', 'bab', 'r', 'aba'], ['aba', 'b', 'r', 'a', 'b', 'a'], ['aba', 'b', 'r', 'aba']]
