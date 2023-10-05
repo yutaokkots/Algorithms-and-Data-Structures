@@ -21,7 +21,7 @@ array_of_numbers = [2, 4, 6]
 total_1 = sum(array_of_numbers)
 print(total_1)
 
-# Recrusive algorithm:
+# Recursive algorithm:
 def sum_recursive(arr, i = 0, sum=0):
     if i == len(arr) - 1:
         return sum + arr[i]

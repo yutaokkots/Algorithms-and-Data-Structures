@@ -1,4 +1,6 @@
 '''
+Fibonacci problem 
+
 Solving Climbing Stairs with the 
     - brute force (bf) method 
     - memoization (memo) method

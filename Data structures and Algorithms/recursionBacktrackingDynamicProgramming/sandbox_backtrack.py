@@ -157,7 +157,7 @@ class SolutionCombinationSumII:
 
 '''
 
-for LC Solution Combination Sum, if the 'permutation' was printed with each loop:
+for LC 39 Combination Sum, the state of 'permutation' printed during each loop:
 
 []
 [2]

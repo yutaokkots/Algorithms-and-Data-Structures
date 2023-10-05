@@ -1,3 +1,5 @@
+
+
 class Fib():
     def fibonacci_head(self, n):
         if n == 0:
@@ -30,10 +32,16 @@ class Fib():
         return self.fibonacci_tail2(n-1, b, a + b) 
     
 fib = Fib()
+
 result = fib.fibonacci_head(8)
 print(result)
+# 21
+
 result2 = fib.fibonacci_tail1(8)
 print(result2)
+# 21
+
 result3 = fib.fibonacci_tail2(8)
 print(result3)
+# 21
 
