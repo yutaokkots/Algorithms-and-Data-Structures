@@ -27,28 +27,31 @@ from typing import List
 
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
-        res, part = [], []
+        result, partition = [], []
 
-        def dfs(i):
+        def backtrack(i):
             if i >= len(s):
-                res.append(part.copy())
+                result.append(partition.copy())
                 return
             for j in range(i, len(s)):
-                if self.isPali(s, i, j):
-                    part.append(s[i : j + 1])
-                    dfs(j + 1)
-                    part.pop()
+                if self.isPalindrome(s, i, j):
+                    partition.append(s[i : j + 1])
+                    backtrack(j + 1)
+                    partition.pop()
 
-        dfs(0)
-        return res
+        backtrack(0)
+        return result
 
-    def isPali(self, s, l, r):
+    def isPalindrome(self, s, l, r):
         while l < r:
             if s[l] != s[r]:
                 return False
             l, r = l + 1, r - 1
         return True
 
+    #def isPalindrome(self, s, l, r):
+    #    return list(s[l:r+1])[::-1] == list(s[l:r+1])
+    
 
 sol = Solution()
 
