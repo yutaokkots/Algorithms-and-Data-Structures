@@ -23,7 +23,7 @@ Output: false
 '''
 from typing import List
 
-class Solution:
+class Solution1:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         count = 0
         i = 0
@@ -36,4 +36,27 @@ class Solution:
             i += 1
         
         return count >= n
-        
+    
+class Solution2:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        f = [0] + flowerbed + [0]
+
+        for i in range(1, len(f) - 1):
+            if f[i - 1] == 0 and f[i] == 0 and f[i + 1] == 0:
+                f[i] = 1
+                n -= 1
+        return n <= 0
+    
+class Solution3:
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        ct = 0 if flowerbed[0] else 1
+
+        for f in flowerbed:
+            if f:
+                n -= int((ct - 1) / 2)
+                ct = 0
+            else:
+                ct += 1
+
+        n -= (ct) // 2
+        return n <= 0
