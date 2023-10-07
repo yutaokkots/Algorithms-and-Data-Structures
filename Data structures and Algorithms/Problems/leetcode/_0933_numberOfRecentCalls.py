@@ -28,9 +28,11 @@ recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002]
 
 
 '''
+from collections import deque
+from _0933_numberOfRecentCalls_supplemental import command, value
+import time
 
-class RecentCounter:
-
+class RecentCounterStack:
     def __init__(self):
         self.stack = []
         self.temp = []
@@ -50,6 +52,42 @@ class RecentCounter:
             self.stack.append(self.temp.pop())
         
         return counter
+    
+class RecentCounterQueue:
+    def __init__(self):
+        self.q = deque()
+
+    def ping(self, t: int) -> int:
+        self.q.append(t)
+        if self.q:
+            while t - 3000 > self.q[0]:
+                self.q.popleft()
+        return len(self.q)
+
+
+rcstack = RecentCounterStack()
+rcstack_result = []
+
+start_1 = time.time()
+for c in range(1, len(command)):
+    res = rcstack.ping(value[c][0])
+    #rcstack_result.append(res)
+end_1 = time.time()
+
+#print(rcstack_result)
+print(end_1 - start_1)
+
+rcqueue = RecentCounterQueue()
+rcqueue_result = []
+
+start_2 = time.time()
+for c in range(1, len(command)):
+    res = rcqueue.ping(value[c][0])
+    #rcqueue_result.append(res)
+end_2 = time.time()
+
+#print(rcstack_result)
+print(end_2 - start_2)
 
 
 # Your RecentCounter object will be instantiated and called as such:
