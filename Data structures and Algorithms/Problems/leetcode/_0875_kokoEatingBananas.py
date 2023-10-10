@@ -42,13 +42,32 @@ class Solution():
                 left = mid + 1
         return res
 
-
     def bananaRateCounter(self, piles, bananas):
         counter = 0
         for i in range(len(piles)):
             counter += math.ceil(piles[i] / bananas)
         return counter
 
+class Solution2():
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        def bananaEatingRate(k, pl):
+            counter = 0
+            for p in pl:
+                counter += -(p // -k)
+            return counter
+
+        left, right = 1, max(piles)
+        answer = 0
+        
+        while left <= right:
+            banana_rate = left + ((right - left) // 2)
+            number_of_hrs = bananaEatingRate(banana_rate, piles)
+            if number_of_hrs <= h:
+                answer = banana_rate
+                right = banana_rate - 1
+            else :
+                left = banana_rate + 1
+        return answer
 
 '''
     def minEatingSpeed2(self, piles: List[int], h: int) -> int:

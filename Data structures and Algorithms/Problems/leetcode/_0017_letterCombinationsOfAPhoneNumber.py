@@ -52,3 +52,11 @@ class Solution2:
             backtrack(0, [])
 
         return answer
+    
+
+sol = Solution()
+answer = sol.letterCombinations("2223218632")
+print(answer)
+
+## time complexity = O(n * 4^n)
+print(len(answer))
