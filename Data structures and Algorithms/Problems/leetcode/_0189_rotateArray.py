@@ -32,7 +32,20 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         #################
-        ## Solution 2 (slice)
+        ## Solution 2 - O(k) time complexity; O(k) space complexity.
+        #########
+        if k:                   # if k is non-zero
+            k = k % len(nums)   # adjusts value of k, in case input k is greater than len(nums).
+            shift = nums[-k:]   # creates a shallow copy, 'shift', from -k index to end.
+            nums[-k:] = []      # deletes from -k index to end, in the 'nums' list.
+            nums[0:0] = shift   # at index 0 to index 0 of 'nums', inserts the shallow copy, 'shift'. 
+
+    def rotate3(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        #################
+        ## Solution 3 (slice)
         #########
         if k != 0:
             size = len(nums)
