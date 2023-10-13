@@ -50,9 +50,6 @@ import heapq
 
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
-        #["A","A","A","A","A","A","B","C","D","E","F","G"] 12
-        # A > B > C > A > D > E > A > F > G > A > i > i > A > i > i > A 
-        # O(n * m)
         count = Counter(tasks)
         maxHeap = [-cnt for cnt in count.values()]
         heapq.heapify(maxHeap)
@@ -69,3 +66,7 @@ class Solution:
             if q and q[0][1] == time:
                 heapq.heappush(maxHeap, q.popleft()[0])
         return time
+
+sol = Solution()
+answer = sol.leastInterval(["A","A","A","A","A","A","B","C","D","E","F","G"], 2)
+print(answer)
