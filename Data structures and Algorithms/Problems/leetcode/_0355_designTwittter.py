@@ -45,6 +45,10 @@ from collections import defaultdict
 import heapq
 import time
 
+############
+## Solution 1
+#######
+
 class Twitter1:
     def __init__(self):
         self.count = 0
@@ -101,6 +105,52 @@ class Twitter1:
         if followeeId in self.followMap[followerId]:
             self.followMap[followerId].remove(followeeId)
 
+############
+## Solution 2
+#######
+
+class Twitter2:
+
+    def __init__(self):
+        self.tweets = {}
+        self.follows = {}
+        self.tweetId = 1
+    
+
+    def postTweet(self, userId: int, tweetId: int) -> None:
+        if userId in self.tweets:
+            self.tweets[userId][self.tweetId] = tweetId
+            self.tweetId += 1
+        else:
+            self.tweets[userId] = {self.tweetId: tweetId}
+            self.tweetId += 1
+
+    def getNewsFeed(self, userId: int) -> List[int]:
+        otherUsers = self.follows[userId] if userId in self.follows else []
+        users = [userId] + otherUsers
+
+        tweets = {}
+        for id in users:
+            if id in self.tweets:
+                tweets.update(self.tweets[id])
+        
+        tweets = sorted(tweets.items(), key= lambda x: x[0])
+        
+        return [x[1] for x in tweets][-1:-11:-1]
+
+    def follow(self, followerId: int, followeeId: int) -> None:
+        if followerId in self.follows:
+            self.follows[followerId].append(followeeId)
+        else:
+            self.follows[followerId] = [followeeId]
+
+    def unfollow(self, followerId: int, followeeId: int) -> None:
+        if followerId in self.follows:
+            self.follows[followerId].remove(followeeId)
+
+############
+## Solution 3
+#######
 
 class Twitter:
 
