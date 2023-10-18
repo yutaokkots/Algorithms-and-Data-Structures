@@ -41,6 +41,66 @@ At most 3 * 104 calls will be made to postTweet, getNewsFeed, follow, and unfoll
 
 '''
 from typing import List
+from collections import defaultdict
+import heapq
+import time
+
+class Twitter1:
+    def __init__(self):
+        self.count = 0
+        self.tweetMap = defaultdict(list)
+        self.followMap = defaultdict(set)
+
+        self.users = {}
+        self.follows = {}
+
+    def postTweet(self, userId: int, tweetId: int) -> None:
+        ''' User 'userId' composes a new tweet with ID 'tweetId'. 
+        '''
+        self.tweetMap[userId].append([self.count, tweetId])
+        self.count -= 1
+
+        # curr_time = time.time()
+        # if userId in self.users.keys():
+        #     h = self.users[userId]
+        #     heapq.heappush(h, [-curr_time, tweetId])
+        # else:
+        #     h = []
+        #     heapq.heappush(h, [-curr_time, tweetId])
+        #     self.users[userId] = h
+
+    def getNewsFeed(self, userId: int) -> List[int]:
+        ''' Retrieves the 10 most recent tweet IDs, from most recent to least recent. 
+        '''
+        result = []
+        minheap = []
+
+        self.followMap[userId].add(userId)
+        for followeeId in self.followMap[userId]:
+            if followeeId in self.tweetMap:
+                index = len(self.tweetMap[followeeId]) - 1
+                count, tweetId = self.tweetMap[followeeId][index]
+                minheap.append([count, tweetId, followeeId, index - 1])
+        heapq.heapify(minheap)
+        while minheap and len(result) < 10:
+            count, tweetId, followeeId, index = heapq.heappop(minheap)
+            result.append(tweetId)
+            if index >= 0:
+                count, tweetId = self.tweetMap[followeeId][index]
+                heapq.heappush(minheap, [count, tweetId, followeeId, index - 1])
+        return result
+
+    def follow(self, followerId: int, followeeId: int) -> None:
+        ''' User with ID followerId, will follow ID followeeId
+        '''
+        self.followMap[followerId].add(followeeId)
+
+    def unfollow(self, followerId: int, followeeId: int) -> None:
+        ''' User with ID followerId, will unfollow ID followeeId
+        '''
+        if followeeId in self.followMap[followerId]:
+            self.followMap[followerId].remove(followeeId)
+
 
 class Twitter:
 
