@@ -67,7 +67,7 @@ class Solution:
                     bfs(row, col)
                     islands += 1
         return islands
-    
+        
 
 class Solution2:
     def numIslandsDFS1(self, grid: List[List[str]]) -> int:
