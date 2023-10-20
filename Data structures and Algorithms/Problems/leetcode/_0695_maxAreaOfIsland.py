@@ -24,24 +24,26 @@ from typing import List
 
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        ROWS, COLS = len(grid), len(grid[0])
-        visit = set()
+        if not grid:
+            return 0
+        rows, cols = len(grid), len(grid[0])
+        visited = set()
+        maxArea = 0
 
         def dfs(r, c):
-            if (
-                r < 0
-                or r == ROWS
-                or c < 0
-                or c == COLS
-                or grid[r][c] == 0
-                or (r, c) in visit
-            ):
+            if ((r,c) in visited or 
+                    r not in range(rows) or
+                    c not in range(cols) or
+                    grid[r][c] == 0 ):
                 return 0
-            visit.add((r, c))
-            return 1 + dfs(r + 1, c) + dfs(r - 1, c) + dfs(r, c + 1) + dfs(r, c - 1)
+            visited.add((r,c))
+            return 1 + dfs(r+1,c) + dfs(r-1,c) + dfs(r,c+1) + dfs(r,c-1)
 
-        area = 0
-        for r in range(ROWS):
-            for c in range(COLS):
-                area = max(area, dfs(r, c))
-        return area
+        for row in range(rows):
+            for col in range(cols):
+                if (grid[row][col] == 1 and 
+                        (row, col) not in visited):
+                    island_area = dfs(row, col)
+                    maxArea = max(maxArea, island_area)
+
+        return maxArea 
