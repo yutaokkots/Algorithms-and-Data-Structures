@@ -57,7 +57,6 @@ class Solution:
         pacific, atlantic = set(), set()
 
         def dfs(r, c, visit, prevHeight):
-            print(r, c)
             if (
                 (r, c) in visit
                 or r < 0
@@ -95,48 +94,41 @@ answer = sol.pacificAtlantic(island)
 a = "True" if answer == [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]] else "False"
 print(f"{answer}\n{a}")
 
+class Solution2:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        pacific, atlantic = set(), set()
+        rows, cols = len(heights), len(heights[0])
 
-        # result = []
-        # pacific, atlantic = set(), set()
-        # # pacific -> row < 0, col < 0
-        # # atlantic -> row > rows, col > cols
-        # rows, cols = len(heights), len(heights[0])
-        # #visited = set()
+        def dfs(r, c, visited, coord):
+            if ((r,c) in visited or
+                    r not in range(rows) or
+                    c not in range(cols) or
+                    heights[r][c] < heights[coord[0]][coord[1]]):
+                return
+            visited.add((r,c))
+            directions = [(1,0),(-1,0),(0,1),(0,-1)]
+            for dr, dc in directions:
+                row, col = dr + r, dc + c
+                dfs(row, col, visited, [r,c])
 
-        # def dfs(r, c, coord):
-        #     if r == 0 or c == 0 and r == rows - 1 or c == cols - 1:
-        #         pacific.add(coord)
-        #         atlantic.add(coord)
-        #         return
-        #     elif r == 0 or c == 0:
-        #         pacific.add(coord)
-        #         return
-        #     elif r == rows - 1 or c == cols - 1:
-        #         atlantic.add(coord)
-        #         return
-            
-        #     curr_val = heights[r][c]
-        #     #visited.add((r,c))
-        #     directions = [(1,0),(-1,0),(0,1),(0,-1)]
-        #     for dr, dc in directions:
-        #         row, col = dr + r, dc + c
-        #         if (curr_val >= heights[row][col] or 
-        #                 row not in range(rows) or
-        #                 col not in range(cols)):
-        #             dfs(row, col, coord)
-        #         # else:
-        #         #     dfs(row, col, coord)
+        for r in range(rows):
+            dfs(r, 0, pacific, [r,0])
+            dfs(r, cols-1, atlantic, [r, cols-1])
 
-                
+        for c in range(cols):
+            dfs(0, c, pacific, [0,c])
+            dfs(rows-1, c, atlantic, [rows-1, c])        
 
-        # for row in range(rows):
-        #     for col in range(cols):
-        #         dfs(row, col, (row, col))
+        answer = []
+        for row in range(rows):
+            for col in range(cols):
+                if (row, col) in pacific and (row, col) in atlantic:
+                    answer.append([row, col])
+        return answer
 
-        # answer = []
-        # print(atlantic)
-        # print(pacific)
-        # for val in pacific:
-        #     if val in atlantic:
-        #         answer.append(val)
-        # return answer
+sol = Solution2()
+
+answer2 = sol.pacificAtlantic(island)
+
+b = "True" if answer2 == [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]] else "False"
+print(f"{answer2}\n{b}")
