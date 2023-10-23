@@ -49,13 +49,15 @@ n == heights[r].length
 '''
 from typing import List
 
+island = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-
         ROWS, COLS = len(heights), len(heights[0])
         pacific, atlantic = set(), set()
 
         def dfs(r, c, visit, prevHeight):
+            print(r, c)
             if (
                 (r, c) in visit
                 or r < 0
@@ -86,6 +88,12 @@ class Solution:
                     result.append([r, c])
         return result
 
+sol = Solution()
+
+answer = sol.pacificAtlantic(island)
+
+a = "True" if answer == [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]] else "False"
+print(f"{answer}\n{a}")
 
 
         # result = []
