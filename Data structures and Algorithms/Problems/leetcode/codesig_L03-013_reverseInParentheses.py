@@ -1,4 +1,5 @@
 '''
+Reverse in Parentheses
 
 For inputString = "(bar)", the output should be
 solution(inputString) = "rab";
