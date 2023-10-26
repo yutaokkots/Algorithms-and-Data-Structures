@@ -65,3 +65,13 @@ class Solution:
                         fresh -= 1
             time += 1
         return time if fresh == 0 else -1
+
+oranges_1 = [[2,1,1],[1,1,0],[0,1,1]]
+oranges_2 = [[2,1,1],[1,1,0],[0,1,2]]
+sol = Solution()
+
+answer_1 = sol.orangesRotting(oranges_1)
+answer_2 = sol.orangesRotting(oranges_2)
+
+print(answer_1)
+print(answer_2)
