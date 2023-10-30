@@ -1,7 +1,12 @@
 '''
 FOR/ELSE 
 
-"for loops also have an else clause which most of us are unfamiliar with. The else clause executes after the loop completes normally. This means that the loop did not encounter a break statement. They are really useful once you understand where to use them. I, myself, came to know about them a lot later."
+"for loops also have an else clause which most of us are unfamiliar with. 
+
+The else clause executes after the loop completes normally. 
+This means that the loop did not encounter a break statement. 
+
+They are really useful once you understand where to use them. I, myself, came to know about them a lot later."
 https://book.pythontips.com/en/latest/for_-_else.html
 © Copyright 2017, Muhammad Yasoob Ullah Khalid Revision 9b6262ee.
 

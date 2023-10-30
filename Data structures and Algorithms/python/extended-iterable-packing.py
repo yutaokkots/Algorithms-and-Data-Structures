@@ -24,6 +24,11 @@ first, *rest = seq
 print(first, rest)
 # 0 [1, 2, 3, 4]
 
+seq2 = "abcdefg"
+begin, *middle, end = seq2
+print(begin, middle, end)
+# 0 [1, 2, 3, 4]
+
 def solution(a):
     res = a[:]
     while res and res[0] != res[-1]:
@@ -31,3 +36,7 @@ def solution(a):
     return res
 
 
+s = "hello there!"
+
+ans = solution(s)
+print(ans)
