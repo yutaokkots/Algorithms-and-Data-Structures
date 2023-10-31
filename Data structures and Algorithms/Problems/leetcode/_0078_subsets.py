@@ -27,9 +27,12 @@ class Solution:
         subset = []
 
         def backtrack(i):
+            print(subset)
             if i >= len(nums):
                 answer.append(subset.copy())
+                print(f'COPIED!: {subset}')
                 return
+            
             subset.append(nums[i])
             backtrack(i + 1)
             subset.pop()
@@ -38,4 +41,10 @@ class Solution:
         backtrack(0)
 
         return answer
-            
+
+nums = [1,2,3]
+
+sol = Solution()
+ans = sol.subsets(nums)
+
+print(ans)

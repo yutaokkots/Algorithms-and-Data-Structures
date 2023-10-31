@@ -40,7 +40,6 @@ All the pairs [ai, bi] are distinct.
 '''
 from typing import List
 
-
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         adj_lst = {k:[] for k in range(numCourses)}
@@ -50,19 +49,19 @@ class Solution:
         output = []
         visit, cycle = set(), set()
 
-        def dfs(crs):
-            if crs in cycle:
+        def dfs(course):
+            if course in cycle:
                 return False
-            if crs in visit:
+            if course in visit:
                 return True
 
-            cycle.add(crs)
-            for pre in adj_lst[crs]:
-                if dfs(pre) == False:
+            cycle.add(course)
+            for prereq in adj_lst[course]:
+                if dfs(prereq) == False:
                     return False
-            cycle.remove(crs)
-            visit.add(crs)
-            output.append(crs)
+            cycle.remove(course)
+            visit.add(course)
+            output.append(course)
             return True
 
         for c in range(numCourses):
