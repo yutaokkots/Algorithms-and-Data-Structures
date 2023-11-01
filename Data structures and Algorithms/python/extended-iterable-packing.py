@@ -27,7 +27,7 @@ print(first, rest)
 seq2 = "abcdefg"
 begin, *middle, end = seq2
 print(begin, middle, end)
-# 0 [1, 2, 3, 4]
+#a ['b', 'c', 'd', 'e', 'f'] g
 
 def solution(a):
     res = a[:]
@@ -40,3 +40,5 @@ s = "hello there!"
 
 ans = solution(s)
 print(ans)
+
+# ['e', 'l', 'l', 'o', ' ', 't', 'h', 'e', 'r', 'e']
