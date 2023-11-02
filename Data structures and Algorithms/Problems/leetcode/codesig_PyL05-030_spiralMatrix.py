@@ -1,7 +1,6 @@
 '''
 Spiral Matrix
 
-
 A spiral matrix is a square matrix of size n x n. It contains all the integers in range from 1 to n * n so that number 1 is written in the bottom right corner, and all other numbers are written in increasing order spirally in the counterclockwise direction.
 
 Given the size of the matrix n, your task is to create a spiral matrix.
