@@ -53,28 +53,31 @@ class Solution:
         if endWord not in wordList:
             return 0
 
-        nei = collections.defaultdict(list)
+        adj_lst = defaultdict(list)
         wordList.append(beginWord)
-        for word in wordList:
-            for j in range(len(word)):
-                pattern = word[:j] + "*" + word[j + 1 :]
-                nei[pattern].append(word)
+        for w in wordList:
+            for i in range(len(w)):
+                pattern = w[:i] + "*" + w[i + 1:]
+                adj_lst[pattern].append(w)
+        
+        q_word = deque([beginWord])
+        counter = 1
+        visited = set([beginWord])
 
-        visit = set([beginWord])
-        q = deque([beginWord])
-        res = 1
-        while q:
-            for i in range(len(q)):
-                word = q.popleft()
+        while q_word:
+            for _ in range(len(q_word)):
+                word = q_word.popleft()
                 if word == endWord:
-                    return res
-                for j in range(len(word)):
-                    pattern = word[:j] + "*" + word[j + 1 :]
-                    for neiWord in nei[pattern]:
-                        if neiWord not in visit:
-                            visit.add(neiWord)
-                            q.append(neiWord)
-            res += 1
+                    return counter
+                for i in range(len(word)):
+                    pattern = word[:i] + "*" + word[i + 1:]
+                    for next_word in adj_lst[pattern]:
+                        if next_word not in visited:
+                            q_word.append(next_word)
+                            visited.add(next_word)
+
+            counter += 1
+
         return 0
 
 class Solution2:
