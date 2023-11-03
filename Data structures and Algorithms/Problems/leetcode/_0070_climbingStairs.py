@@ -71,5 +71,9 @@ class Solution3:
         return dp[n]
 
 sol1 = Solution1()
-answer1 = sol1.climbStairs(5)
+answer1 = sol1.climbStairs(8)
 print(answer1)
+
+sol2 = Solution2()
+answer2 = sol2.climbStairs(8)
+print(answer2)
