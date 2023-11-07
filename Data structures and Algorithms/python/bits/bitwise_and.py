@@ -52,3 +52,25 @@ print(c & d)
 
 # >>> 8
 
+
+print("######## ---- ####### \n")
+
+lst1 = ["hello", "battery", "headphone", "toilet paper", "sticker"]
+lst2 = ["hat","toilet paper","captain","wrench","battery"]
+lst3 = ["boat", "toilet paper", "ninja", "smoke"]
+
+set_1 = set(lst1)
+set_2 = set(lst2)
+set_3 = set(lst3)
+
+print(set_1 & set_2)
+# {'toilet paper', 'battery'}
+
+print(set_1 - set_2)
+# {'hello', 'sticker', 'headphone'}
+
+print(set_2 - set_1)
+# {'captain', 'wrench', 'hat'}
+
+print(set_1 & set_2 & set_3)
+# {'toilet paper'}
