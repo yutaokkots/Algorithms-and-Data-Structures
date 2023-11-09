@@ -74,3 +74,5 @@ print(set_2 - set_1)
 
 print(set_1 & set_2 & set_3)
 # {'toilet paper'}
+
+print("hello" or "goodbye")

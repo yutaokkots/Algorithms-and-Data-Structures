@@ -12,3 +12,5 @@ let intersection = new Set([...set1].filter(item => set2.has(item)));
 
 console.log(intersection)
 // Set(2) { 'battery', 'toilet paper' }
+
+console.log("hello" || "goodbye")
