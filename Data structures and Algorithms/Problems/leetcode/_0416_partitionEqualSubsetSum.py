@@ -29,16 +29,20 @@ class Solution:
             return False
 
         target = sum(nums) // 2
-
-        dp = set()
-        dp.add(0)
+        check = set()
+        check.add(0)
 
         for i in range(len(nums) - 1, -1, -1):
-            nextDP = set()
-            for t in dp:
+            next_check = set()
+            for t in check:
                 if (t + nums[i]) == target:
                     return True
-                nextDP.add(t + nums[i])
-                nextDP.add(t)
-            dp = nextDP
+                next_check.add(t + nums[i])
+                next_check.add(t)
+                print(next_check)
+            check = next_check
         return False
+
+sol = Solution()
+ans = sol.canPartition( [1,5,11,5])
+print(ans)
