@@ -42,7 +42,27 @@ class Solution:
                 print(next_check)
             check = next_check
         return False
+    
+    def canPartition2(self, nums: List[int]) -> bool:
+        if sum(nums) % 2:
+            return False
+        target = sum(nums) // 2  
 
+        latest_combination = set() 
+        latest_combination.add(0)
+
+        for i in range(len(nums)):
+            temp_combination = set()
+            for c in latest_combination:
+                if c + nums[i] == target:
+
+                    return True
+                temp_combination.add(c + nums[i])
+                temp_combination.add(c)
+  
+            latest_combination = temp_combination
+
+        return False
 sol = Solution()
 ans = sol.canPartition( [1,5,11,5])
 print(ans)
