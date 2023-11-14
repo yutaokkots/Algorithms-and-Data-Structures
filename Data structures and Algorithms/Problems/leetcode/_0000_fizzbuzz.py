@@ -4,12 +4,13 @@ print fizz if the number is divisible by 3
 print buzz if the number is divisible by 5
 print fizzbuzz if the number is divisible by both 3 and 5
 else print the number itself if it is neither
-
-
 '''
+
+from time_measure import timer
 
 num = 24
 
+@timer
 def fizzbuzz_naive(n):
     answer = []
     for i in range(1, n+1):
@@ -21,9 +22,9 @@ def fizzbuzz_naive(n):
             answer.append("fizz")
         else:
             answer.append(i)
-    print(answer)
+    return answer
     
-
+@timer
 def fizzbuzz(n):
     answer = []
     for i in range(1, n+1):
@@ -35,8 +36,10 @@ def fizzbuzz(n):
         if output == "":
             output += f"{i}"
         answer.append(output)
-    print(answer)
+    return answer
 
 
-fizzbuzz_naive(num)
-fizzbuzz(num)
+ans1 = fizzbuzz_naive(num)
+print(ans1)
+ans2 = fizzbuzz(num)
+print(ans2)
