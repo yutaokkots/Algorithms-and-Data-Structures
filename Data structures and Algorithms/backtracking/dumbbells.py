@@ -45,3 +45,19 @@ print(answer2)
 sol2 = Solution()
 answer = sol2.dumbbell(y)
 print(answer)
+
+
+
+w = ["letter", "book", "pencil", "apple", "table"]
+
+def duplicateStr(s):
+    words = list(s)
+    dup_letter_words = []
+    for word in words:
+        w_set = set(word)
+        if len(w_set) != len(word):
+            dup_letter_words.append(word)
+
+    return dup_letter_words
+
+print(duplicateStr(w))
