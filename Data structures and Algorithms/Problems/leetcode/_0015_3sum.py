@@ -28,5 +28,7 @@ class Solution:
                     output.append([nums[left], nums[mid], nums[right]])
                     mid += 1
                     right -= 1
+                    while mid < right and nums[mid] == nums[mid - 1]:
+                        mid += 1
         return output
     

@@ -15,7 +15,7 @@ def test_3sum(solution):
     case.assertCountEqual(solution.threeSum([-2, 0, 1, 1, 2]), [[-2, 0, 2], [-2, 1, 1]])
     case.assertCountEqual(solution.threeSum([1, 2, -2, -1]), [])
     case.assertCountEqual(solution.threeSum([3, -2, 1, 0]), [])
-    case.assertCountEqual(solution.threeSum([-1, -1, -1, 0, 0, 0, 1, 1, 1]), [[-1, 0, 1], [-1, 0, 1], [-1, 0, 1], [0, 0, 0]])
+    case.assertCountEqual(solution.threeSum([-1, -1, -1, 0, 0, 0, 1, 1, 1]), [[-1, 0, 1], [0, 0, 0]])
     case.assertCountEqual(solution.threeSum([1, -1, 0]), [[-1, 0, 1]])
     case.assertCountEqual(solution.threeSum([0, 0, 0, 0]), [[0, 0, 0]])
     case.assertCountEqual(solution.threeSum([1, -1, -1, 0, 2, -1, -4]), [[-1, -1, 2], [-1, 0, 1]])
