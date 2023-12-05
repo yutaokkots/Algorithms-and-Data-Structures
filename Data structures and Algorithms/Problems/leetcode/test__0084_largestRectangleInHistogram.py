@@ -1,13 +1,12 @@
 """Test for LC84, Largest Rectangle in Histogram using unittest"""
 
-import unittest, pytest
+import unittest
 from _0084_largestRectangleInHistogram import Solution
 unittest.TestCase.maxDiff = None
 
 class TestLargestRectangleInHistogram(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestLargestRectangleInHistogram, self).__init__(*args, **kwargs)
-
         self.sol = Solution()
 
     def test_LargestRectangle(self):
