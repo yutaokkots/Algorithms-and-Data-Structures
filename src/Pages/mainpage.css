@@ -1,0 +1,40 @@
+.main-screen{
+    display:flex;
+    flex-grow: 1;
+    flex-basis: 1;
+    min-height: 100vh;
+    margin-top:60px;
+}
+
+.sidebar{
+    background-color: rgba(30,30,30,0) ;
+    flex-shrink: 0;
+    width:200px;
+    min-height:100vw;
+
+}
+
+.mainbar {
+    background-color: rgb(98, 100, 101);
+    flex-grow: 1;
+}
+
+.mini-title {
+    padding: 1rem;
+}
+
+.project-view {
+    visibility: hidden;
+}
+
+.project-view--selected {
+    visibility: visible;
+}
+
+.sidebar-selection {
+    cursor: pointer;
+}
+:hover.sidebar-selection {
+    color:lightpink;
+    cursor: pointer;
+}
