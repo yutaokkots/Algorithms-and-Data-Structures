@@ -16,16 +16,21 @@ import ModifiedBinarySearch from './CodingPages/ModifiedBinarySearch';
 import TopKElements from './CodingPages/TopKElements';
 import KWayMerge from './CodingPages/KWayMerge';
 import TopoSort from './CodingPages/TopoSort';
+import MainPage from './MainPage';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+        <header>
+          <Navbar />
+        </header>
         <main>
             <>
-              <Navbar />
+              
               <Routes>
+                  <Route path="/" element={<MainPage />} />
                   <Route path="/:paramId/01-sliding-window"                    element={<SlidingWindow />} />
                   <Route path="/:paramId/02-two-pointers"                      element={<TwoPointers />} />
                   <Route path="/:paramId/03-fast-and-slow-pointers"            element={<FastSlowPointers />} />

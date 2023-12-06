@@ -1,3 +1,27 @@
-.menu ul {
-    list-style:none;
+.menu {
+    height: 60px;
+    position:relative;
+    top: 0;
+    background-color: rgba(20,20,20,1);
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-right: 0.5rem;
+
+}
+
+.selector {
+    padding:0.5rem;
+}
+
+.title {
+    border: 2px solid;
+    border-radius: 0.5em;
+    padding: 2px;
+    background-color: black;
+    color:white;
+    padding: 0.2rem;
+    margin:2rem;
 }
