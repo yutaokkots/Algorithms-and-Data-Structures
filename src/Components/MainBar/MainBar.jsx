@@ -6,7 +6,7 @@ const MainBar = ( {sidebarelements, selectionState}) => {
         <>
             {
                 sidebarelements.map((element,idx) => 
-                    <div key={idx} className={`${idx == selectionState ? "project-view--selected" : "project-view"}`}>
+                    <div key={idx} className={`project-display project-view ${idx == selectionState ? "project-view--selected" : ""}`}>
                         {element.component && <element.component />}
                     </div>
                 )

@@ -3,9 +3,8 @@
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
-  width: 100%;
-  
-
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 header {
