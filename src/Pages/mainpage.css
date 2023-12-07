@@ -2,7 +2,7 @@
     display:flex;
     flex-grow: 1;
     flex-basis: 1;
-    min-height: 100vh;
+    min-height: 100%;
     margin-top:60px;
 }
 
@@ -10,13 +10,14 @@
     background-color: rgba(30,30,30,0) ;
     flex-shrink: 0;
     width:200px;
-    min-height:100vw;
+    min-height:100%;
 
 }
 
 .mainbar {
     background-color: rgb(98, 100, 101);
     flex-grow: 1;
+    height: 100vh;
 }
 
 .mini-title {
