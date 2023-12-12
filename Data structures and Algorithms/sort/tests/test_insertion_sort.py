@@ -1,9 +1,13 @@
+"""Test for Insertion sort. 
+To run test, run:
+    sort % python3 -m unittest -v tests.test_insertion_sort
+"""
 import unittest
 from insertion_sort import InsertionSort
 
 class InsertionSortTest(unittest.TestCase):
     """Testing for InstionSort class."""
-    
+
     def setUp(self):
         """Set-up method for InsertionSort class."""
         self.case01 = [[9, 3, 6, 2, 1, 11],     [1, 2, 3, 6, 9, 11]]
@@ -37,4 +41,3 @@ class InsertionSortTest(unittest.TestCase):
         self.assertEqual(answer3, self.case03[1])
         answer4 = self.sorter.insertionSort02(self.case04[0])
         self.assertEqual(answer4, self.case04[1])
-        
