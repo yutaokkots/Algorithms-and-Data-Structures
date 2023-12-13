@@ -12,7 +12,7 @@ const MortgageOutput = ({output}) => {
                         Monthly payment:
                     </div>
                     <div className="output-box">
-                        <span>${output.monthlymortgage}</span>
+                        <h1><span>${output.monthlymortgage != "NaN" ? output.monthlymortgage: 0}</span></h1>
                     </div>
                 </div>
                 <div className="form-row output-row">
@@ -20,7 +20,7 @@ const MortgageOutput = ({output}) => {
                         Total Payment:
                     </div>
                     <div className="output-box">
-                        <span>${output.totalpayment}</span>
+                        <h3><span>${output.totalpayment != "NaN" ? output.totalpayment  : 0}</span></h3>
                     </div>
                 </div>
                 <div className="form-row output-row">
@@ -28,7 +28,7 @@ const MortgageOutput = ({output}) => {
                         Total interest paid:
                     </div>
                     <div className="output-box">   
-                        <span>${output.totalinterest}</span>
+                        <h3><span>${output.totalinterest != "NaN" ? output.totalinterest : 0}</span></h3>
                     </div>
                 </div>
             </div>

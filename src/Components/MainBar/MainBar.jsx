@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MainBar = ( {sidebarelements, selectionState}) => {
-    console.log(selectionState);
+
     return (
         <>
             {
