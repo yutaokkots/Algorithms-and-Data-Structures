@@ -8,7 +8,7 @@ from merge_sort import MergeSort
 
 class MergeSortTest(unittest.TestCase):
     def setUp(self):
-        self.case01 = [[10, 5, 2, 3, 4, 7], [2,3,4,5,7]]
+        self.case01 = [[10, 5, 2, 3, 4, 7], [2,3,4,5,7,10]]
         self.sort = MergeSort()
 
     def test_merge_sort(self):
