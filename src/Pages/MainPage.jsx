@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import SideBar from '../Components/SideBar/SideBar'
 import "./mainpage.css"
 
-import sidebarelements from './lib/sidebarelements'
+import sidebarelements from './library/sidebarelements'
 import MainBar from '../Components/MainBar/MainBar';
 
 

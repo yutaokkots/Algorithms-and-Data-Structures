@@ -10,15 +10,24 @@
     flex-shrink: 0;
     width:200px;
 }
-
+.sidebar-selection {
+    cursor: pointer;
+}
+:hover.sidebar-selection {
+    color:lightpink;
+    cursor: pointer;
+    
+}
 .mainbar {
     background-color: rgb(98, 100, 101);
     flex-grow: 1;
-    height: 100%;
+    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .mini-title {
@@ -26,26 +35,12 @@
 }
 
 .project-view {
-
     visibility: hidden;
-    
 }
-
 .project-view--selected {
     visibility: visible;
-    position: absolute;
-    top:60px;
-    
 }
 
 
 
-.sidebar-selection {
-    cursor: pointer;
-    
-}
-:hover.sidebar-selection {
-    color:lightpink;
-    cursor: pointer;
-    
-}
+

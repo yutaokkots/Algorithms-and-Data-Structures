@@ -1,0 +1,73 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.mortgage-calculator {
+    position:absolute;
+    background-color: rgb(255, 255, 255);
+    min-width:100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    color: rgb(97, 94, 94);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+.mortgage-app{
+    padding-right:4rem;
+}
+#loan-amount {
+    background-color: whitesmoke;
+    color: rgb(97, 94, 94);
+}
+#interest-rate{
+    background-color: whitesmoke;
+    color: rgb(97, 94, 94);
+}
+#loan-term{
+    background-color: whitesmoke;
+    color: rgb(97, 94, 94); 
+}
+.form-row{
+    display:flex;
+    justify-content: space-between;
+    padding:0.5rem;
+    gap: 10px;
+}
+.form-row > input {
+    padding:5px;
+    text-align: end;
+    border-radius: 0.5rem;
+    color: black;
+}
+.form-row > input::placeholder {
+    color: lightslategray;
+}
+.form-row-button{
+    display:flex;
+    justify-content: end;
+    border-radius: 0.2rem;
+}
+.output-row {
+    padding:5px;
+    text-align: end;
+
+}
+.output_row > span{
+    font-weight: bold;
+
+}
+.output_box {
+    border:1rem solid green;
+    text-align: end;
+    min-width: 30px;
+}
