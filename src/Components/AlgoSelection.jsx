@@ -3,9 +3,11 @@ import algorithms from './algorithmtypes'
 import { PropTypes } from 'prop-types'
 
 const Selection = ({ value }) => {
+
+    // use react component instead of <option><a href={value.url}>{value.name}</a>
     return(
       <>
-        <option><a href={value.url}>{value.name}</a></option> 
+        <option>{value.name}</option> 
       </>
     )
 } 
@@ -24,6 +26,6 @@ export const AlgoSelection = () => {
   )
 }
 
-Selection.PropTypes = {
+Selection.propTypes = {
   value: PropTypes.object
 }

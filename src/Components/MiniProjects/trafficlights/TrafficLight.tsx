@@ -1,33 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import "./trafficlight.css"
+import lights from './lib/lights'
+import lightObj from './lib/lightObj'
 
-const lights = [
-    {
-        name: "red",
-        color: "#610c04",
-        duration: 6000,
-        next: "green"
-    },
-    {
-        name: "yellow",
-        color: "#E9D700",
-        duration: 1500,
-        next: "red"
-    },
-    {
-        name: "green",
-        color: "#005900",
-        duration: 5000,
-        next: "yellow"
-    }
-]
-const lightObj = {
-    "green": 2,
-    "yellow": 1,
-    "red": 0
+interface LightProps {
+    lightObject: Lights;
+    currentColor: string;
 }
 
-const Light = ({lightObject, currentColor}) => {
+interface Lights {
+    name: string;
+    color: string;
+    duration: number;
+    next: string;
+}
+
+const Light:React.FC<LightProps> = ({lightObject, currentColor}) => {
     return (
         <>
             <div
@@ -38,9 +26,8 @@ const Light = ({lightObject, currentColor}) => {
     )
 }
 
-
-const TrafficLight = () => {
-    const [currentColor, setCurrentColor] = useState("green")
+const TrafficLight:React.FC = () => {
+    const [currentColor, setCurrentColor] = useState<string>("green")
     useEffect(()=>{
         const {duration, next} = lights[lightObj[currentColor]]
         const timer = setTimeout(()=> {
