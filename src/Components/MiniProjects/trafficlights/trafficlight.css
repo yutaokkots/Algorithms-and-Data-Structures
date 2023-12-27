@@ -1,0 +1,31 @@
+.traffic-light-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:aqua;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.traffic-light-body {
+    background-color: darkgrey;
+    width: 180px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.light-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 5px;
+    box-sizing: content-box;
+}

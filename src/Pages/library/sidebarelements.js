@@ -1,6 +1,7 @@
 import Clock from "../../Components/MiniProjects/clock/Clock";
 import MortgageCalculator from "../../Components/MiniProjects/mortgageCalculator/MortgageCalculator";
 import FiveLetters from "../../Components/MiniProjects/fiveletters/FiveLetters";
+import TrafficLight from "../../Components/MiniProjects/trafficlights/TrafficLight";
 
 const sidebarelements = [
     {
@@ -14,6 +15,12 @@ const sidebarelements = [
         display: false,
         url: "",
         component: MortgageCalculator
+    },
+    {
+        project: "Traffic Light",
+        display:false,
+        url:"",
+        component: TrafficLight
     },
     {
         project: "Five Letters",
