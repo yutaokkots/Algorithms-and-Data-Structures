@@ -7,9 +7,12 @@ const MainBar = ({ categories, selectionCategory, selectionState }) => {
             {
                 Object.keys(categories).length !== 0 && selectionCategory &&
                     categories[selectionCategory].map((element, idx) => 
-                    <div key={idx} className={`project-display project-view ${idx == selectionState ? "project-view--selected" : ""}`}>
-                        {element.component && <element.component />}
-                    </div>)
+                        <div 
+                            key={idx} 
+                            className={`project-display project-view ${idx == selectionState ? "project-view--selected" : ""}`}>
+                                {element.component && <element.component />}
+                        </div>
+                    )
             }
         </>
     )

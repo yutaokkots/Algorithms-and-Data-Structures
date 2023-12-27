@@ -108,8 +108,7 @@ const Clock = () => {
 
     
     const clock = (`${hr}:${mn}:${sc}`).split("")
-    //const clock = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-    //console.log(clock)
+
     return (
         <>
             <div className="clock-page">

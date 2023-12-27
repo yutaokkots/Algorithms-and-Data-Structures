@@ -1,0 +1,8 @@
+.solid-page {
+    color:whitesmoke;
+}
+
+.solid-page > h1 {
+    font-size:x-large;
+    color: whitesmoke;
+}
