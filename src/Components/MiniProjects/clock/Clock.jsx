@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import "./clock.css"
 
+// the digits from 0 to 9, comprises a top, mid, and bot values that mark the css className values. 
 const timeDigits = {
     1: {
         top:"right",
@@ -54,7 +55,6 @@ const timeDigits = {
     }
 }
 
-
 const useCurrentTime = () => {
     const [time, setTime] = useState(new Date())
     useEffect(() => {
@@ -100,14 +100,13 @@ const Digit = ({val}) => {
 }
 
 const Clock = () => {
-    const time = useCurrentTime()
+    const time = useCurrentTime();
     
-    const hr = adjustZero(time.getHours())
-    const mn = adjustZero(time.getMinutes())
-    const sc = adjustZero(time.getSeconds())
-
+    const hr = adjustZero(time.getHours());
+    const mn = adjustZero(time.getMinutes());
+    const sc = adjustZero(time.getSeconds());
     
-    const clock = (`${hr}:${mn}:${sc}`).split("")
+    const clock = (`${hr}:${mn}:${sc}`).split("");
 
     return (
         <>
@@ -115,16 +114,13 @@ const Clock = () => {
                 <div className="clock-face">
                 {
                     clock.map((val, idx) => 
-                        <Digit key={idx} val={val} />
-                    )
+                        <Digit key={idx} val={val} />)
                 }
                 </div>
-                <div className="table">
-
-                </div>
+                <div className="table"></div>
             </div>
         </>
     )
 }
 
-export default Clock
+export default Clock;
