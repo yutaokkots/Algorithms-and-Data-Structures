@@ -51,7 +51,13 @@ class Solution:
 
     def findMaximumLength(self, nums: List[int]) -> int:
         """Class method to find the max length and solve LC2945."""
+        check = set()
 
+
+
+
+    def findMaximumLength2(self, nums: List[int]) -> int:
+        """Class method to find the max length and solve LC2945."""
         # Incorrect solution:
         self.nums = nums
         length = len(nums)
@@ -84,3 +90,7 @@ class Solution:
             if lst[i - 1] >= n:
                 return False
         return True
+
+soln = Solution()
+a = soln.findMaximumLength([5,2,2])
+print(a)
