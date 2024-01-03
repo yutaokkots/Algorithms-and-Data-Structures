@@ -2,10 +2,13 @@ import React from 'react'
 import DisplayDAmpersand from './DisplayDAmpersand'
 import './ternariesampersands.css'
 
+// reference: https://www.youtube.com/watch?app=desktop&v=mOwZhb9bZ5s
+
 const TernariesAmpersands = () => {
     return (
         <div className="ternaries-page">
             <h2>The case against Ternaries (?:) and double-ampersands (&&) in JSX code</h2>
+            
             <h3>Three Examples</h3>
             <div className="container-examples">
                 <div className="example-d-ampersand">
