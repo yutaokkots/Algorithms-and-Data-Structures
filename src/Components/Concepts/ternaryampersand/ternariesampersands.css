@@ -18,10 +18,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 1rem;  
 }
 
-.example-d-ampersand {
-
+.state-display-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    justify-content: space-around;
 }
 
 .state-display{
@@ -30,7 +34,7 @@
 
     gap:2rem;
     border: 1px solid rebeccapurple;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 1rem;
 }
 
@@ -47,4 +51,31 @@
     background-color: rgb(46, 46, 46);
     color: white;
     padding: 1rem;
+}
+
+.information-area{
+    border: 1px solid rebeccapurple;
+    padding: 0.5rem;
+    border-radius:0.5rem;
+}
+
+.users-display {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-box {
+    display:flex;
+    flex-direction: column;
+    border: 1px solid rebeccapurple;
+    padding: 0.5rem;
+    border-radius:0.5rem;
+    gap:1rem;
+}
+
+.enclosed {
+    border: 1px solid gray;
+    padding: 0.5rem;
+    border-radius:0.5rem;
+    gap:1rem;
 }
