@@ -31,7 +31,7 @@ const DisplayTernary:React.FC<DisplayProps> = ({ openArea, openInfo, userInfo })
                             {openInfo ?
                                 <>
                                 <div className="enclosed users-display">
-                                    <div><pre>'openInfo' == True</pre></div>
+                                    <div><pre>'openInfo' == true</pre></div>
                                         { userInfo.map((user, idx) => 
                                             <UserItem key={idx} user={user} />
                                         )

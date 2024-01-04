@@ -6,14 +6,14 @@ import { DisplayInfoItem } from './interfaces';
 import './ternariesampersands.css'
 import DisplayTernary from './DisplayTernary';
 import DisplayOutOfMarkup from './DisplayOutOfMarkup';
+import CodeDisplay from './CodeDisplay';
+import { dampersandCode, ternaryCode, outsideMarkupCode} from './displayCode'
 
 // reference: https://www.youtube.com/watch?app=desktop&v=mOwZhb9bZ5s
 
 const initialUserInfoState = []
 
-interface UserItemProp {
-    user: DisplayInfoItem
-}
+const codeSnippetArr = [dampersandCode, ternaryCode, outsideMarkupCode]
 
 const TernariesAmpersands = () => {
     const [openArea, setOpenArea] = useState<boolean>(true)
@@ -44,6 +44,7 @@ const TernariesAmpersands = () => {
                 <StateDisplay state={openInfo} setState={setOpenInfoState} stateName={"openInfo"}/>
                 <StateDisplay state={userInfo} setState={setUserInfoState} stateName={"userInfo"}/>
             </div>
+
             <h3>Three Examples</h3>
             <div className="container-examples">
                 <div className="example-d-ampersand">
@@ -58,13 +59,17 @@ const TernariesAmpersands = () => {
                         openInfo={openInfo} 
                         userInfo={userInfo}/>
                 </div>
-
                 <div className="example-d-ampersand">
                     <DisplayOutOfMarkup 
                         openArea={openArea} 
                         openInfo={openInfo} 
                         userInfo={userInfo}/>
                 </div>
+            </div>
+            <h3>Code</h3>
+            <div className="state-display-container">
+                <CodeDisplay codeSnippet={codeSnippetArr}/>
+
             </div>
         </div>
     )
