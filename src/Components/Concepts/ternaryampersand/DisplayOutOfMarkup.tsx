@@ -17,7 +17,7 @@ const SecondLevelComp:React.FC<DisplayProps> = ({ openArea, openInfo, userInfo }
     return (
         <>
             <div>
-                <div className='information-area'></div>
+                <div><pre>'openArea' == true </pre></div>
                 <ThirdLevelComp openInfo={openInfo} userInfo={userInfo}/>
             </div>
         </>
@@ -29,9 +29,9 @@ const ThirdLevelComp:React.FC<ThirdLevelProps> = ( {openInfo, userInfo} ) => {
 
     return(
         <>
-            <div><pre>'openArea' == true </pre></div>
+
             <div className="enclosed users-display">
-                <div><pre>'openInfo' == True</pre></div>
+                <div><pre>'openInfo' == true</pre></div>
                     { userInfo.map((user, idx) => 
                         <UserItem key={idx} user={user} />
                     )
@@ -59,7 +59,7 @@ const DisplayOutOfMarkup:React.FC<DisplayProps> = ({ openArea, openInfo, userInf
     return (
         <>
             <div><b>Outside of Markup</b></div>  
-            <div>
+            <div className="enclosed">
                 <SecondLevelComp openArea={openArea} openInfo={openInfo} userInfo={userInfo}/>
             </div>
         </>

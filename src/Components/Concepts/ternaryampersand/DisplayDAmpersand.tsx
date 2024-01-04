@@ -21,7 +21,6 @@ const UserItem:React.FC<UserItemProp> = ({ user }) => {
 }
 
 const DisplayDAmpersand:React.FC<DisplayProps> = ({ openArea, openInfo, userInfo }) => {
-
     return (
         <>
             <div><b>&&</b></div>
@@ -33,7 +32,7 @@ const DisplayDAmpersand:React.FC<DisplayProps> = ({ openArea, openInfo, userInfo
                             {openInfo && 
                             <>
                             <div className="enclosed users-display">
-                                <div><pre>'openInfo' == True</pre></div>
+                                <div><pre>'openInfo' == true</pre></div>
                                     { userInfo.map((user, idx) => 
                                         <UserItem key={idx} user={user} />
                                     )
