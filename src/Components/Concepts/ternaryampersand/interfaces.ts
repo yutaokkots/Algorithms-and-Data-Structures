@@ -4,7 +4,6 @@ export interface DisplayInfoItem {
     "email":string;
 }
 
-
 export interface SetStateButtonOptions {
     setState: () => void
     stateInfo: any
@@ -12,4 +11,11 @@ export interface SetStateButtonOptions {
 
 export interface SetStateDisplayOptions {
     stateInfo: any
+    stateName: string;
+}
+
+export interface DisplayProps {
+    openArea: boolean;
+    openInfo: boolean
+    userInfo: DisplayInfoItem[] | [];
 }

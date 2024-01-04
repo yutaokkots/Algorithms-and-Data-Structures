@@ -3,17 +3,17 @@ import SetStateButton from './SetStateButton'
 import SetStateDisplay from './SetStateDisplay';
 
 interface SetStateButtonProps {
-    setState: () => void
-    userInfo: any
+    setState: () => void;
+    state: any;
+    stateName: string;
 }
 
-
-const StateDisplay = ({ userInfo, setState }: SetStateButtonProps) => {
+const StateDisplay = ({ state, setState, stateName }: SetStateButtonProps) => {
   return (
     <>
         <div className="state-display">
-            <SetStateButton stateInfo={userInfo} setState={setState}/>
-            <SetStateDisplay stateInfo={userInfo} />
+            <SetStateButton stateInfo={state} setState={setState}/>
+            <SetStateDisplay stateInfo={state} stateName={stateName} />
         </div>
     </>
   )

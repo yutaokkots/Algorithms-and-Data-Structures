@@ -1,33 +1,50 @@
-import React, { useState } from 'react'
-import StateDisplay from './StateDisplay';
-import { displayInfo } from './displayInfo'
-import { DisplayInfoItem } from './interfaces';
+import React from 'react'
 
+import { DisplayInfoItem, DisplayProps } from './interfaces';
 
-// const initialState:DisplayInfoItem[] = [{
-//     "username":"",
-//     "name":"",
-//     "email":"",
-// }]
+interface UserItemProp {
+    user: DisplayInfoItem
+}
 
-const initialState = []
+const UserItem:React.FC<UserItemProp> = ({ user }) => {
+    return (
+        <>  
+            <div className="enclosed">
+            <div className='user-box'>
+                <div><b>name</b>: {user.name}</div>
+                <div><b>username</b>: {user.username}</div>
+                <div><b>email</b>: {user.email}</div>
+            </div>
+            </div>
+        </>
+    )
+}
 
-const DisplayDAmpersand:React.FC = () => {
-    const [userInfo, setUserInfo] = useState<DisplayInfoItem[]>(initialState);
-    const [] = useState("")
-    const setState = () => {
-        if (userInfo == initialState) {
-            setUserInfo(displayInfo)
-        } else {
-            setUserInfo(initialState)
-        }
-    }
+const DisplayDAmpersand:React.FC<DisplayProps> = ({ openArea, openInfo, userInfo }) => {
 
     return (
         <>
-            <div>&&</div>
-            <StateDisplay userInfo={userInfo} setState={setState}/>
-            {userInfo && <></>}
+            <div><b>&&</b></div>
+            <div>
+                <div className='information-area'>
+                    {openArea && 
+                        <>  
+                            <div><pre>'openArea' == true </pre></div>
+                            {openInfo && 
+                            <>
+                            <div className="enclosed users-display">
+                                <div><pre>'openInfo' == True</pre></div>
+                                    { userInfo.map((user, idx) => 
+                                        <UserItem key={idx} user={user} />
+                                    )
+                                }
+                            </div>
+                            </>
+                            }
+                        </>
+                    }
+                </div>
+            </div>
         </>
     )
 }
