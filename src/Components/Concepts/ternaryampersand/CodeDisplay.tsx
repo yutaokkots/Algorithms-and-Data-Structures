@@ -13,7 +13,6 @@ interface CodeSnippetDisplayProps {
 const CodeSnippetDisplay:React.FC<CodeSnippetDisplayProps>  = ({ codeSnippet, selected, displayedVal }) => {
     return (
         <>
-
             <CodeSnippetSingle selected={ selected } displayedVal={ displayedVal } codeSnippet={ codeSnippet }/>
         </>
     )
