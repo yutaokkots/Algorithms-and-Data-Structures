@@ -18,7 +18,6 @@ const CodeSnippetDisplay:React.FC<CodeSnippetDisplayProps>  = ({ codeSnippet, se
     )
 }
 
-
 interface CodeSnippetSelectionProps {
     setDisplay: (number) => void;
     selectionNo: number
@@ -90,7 +89,7 @@ const CodeDisplay:React.FC<CodeDisplayProps> = ({ codeSnippet }) => {
                 </div>
                 <div>
                     {codeSnippet.map((code, idx) => 
-                        <CodeSnippetDisplay key={ idx } selected={idx} displayedVal={displayedVal} setDisplay={handleDisplay} codeSnippet={ code }/>)}
+                        <CodeSnippetDisplay key={ idx } selected={idx} displayedVal={displayedVal} codeSnippet={ code }/>)}
                 </div>
             </div>
         </>
