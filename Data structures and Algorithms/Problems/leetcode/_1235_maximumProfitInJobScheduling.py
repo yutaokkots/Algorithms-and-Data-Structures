@@ -79,7 +79,7 @@ class Solution:
         dp[0] = start_end_profit[0][2]
 
         for i in range(1, length):
-            current_start, current_profit = start_end_profit[i][0], start_end_profit[i][2] 
+            current_start, current_profit = start_end_profit[i][0], start_end_profit[i][2]  
             j = bisect.bisect_right(sorted_end_times, current_start) - 1
             if j >= 0:
                 current_profit += dp[j]
