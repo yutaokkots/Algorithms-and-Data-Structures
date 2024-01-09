@@ -33,8 +33,8 @@ from collections import Counter
 class Solution:
     """Optimized solution for LC0455
 
-    Big-O notation
-    --------------
+    Big-O
+    -----
     time: O(m * log(m) + n * log(n))
     space: O(1).
     """
@@ -57,8 +57,8 @@ class Solution:
 class Solution2:
     """Naive solution for LC0455.
 
-    Big-O notation
-    --------------
+    Big-O
+    -----
     time: O(m + n + m * n) 
     space: O(m + n)
     """
