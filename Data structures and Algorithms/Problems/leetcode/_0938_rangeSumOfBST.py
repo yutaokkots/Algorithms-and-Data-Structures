@@ -39,4 +39,4 @@ class Solution:
             dfs(node.right)
 
         dfs(root)
-        return self.summation
+        return self.summation   
