@@ -8,14 +8,14 @@ This repository is a compilation of algorithms, data structures, design patterns
 
 ## **Languages**
 
-**[Python]('./data_structures_and_algorithms/python')**
+**[Python](./data_structures_and_algorithms/python)**
 
 ## **Design Patterns** 
 
 See my <ins>[design pattern repository](https://github.com/yutaokkots/Design-Patterns)</ins>.
 
 
-**[Design Patterns]('./data_structures_and_algorithms/DesignPatterns/design-patterns.md')**
+**[Design Patterns](./data_structures_and_algorithms/DesignPatterns/design-patterns.md)**
 
 <div align="center">
 
@@ -33,16 +33,16 @@ See my <ins>[design pattern repository](https://github.com/yutaokkots/Design-Pat
 |Data Structure | Problem | Notes | 
 |-|-|-|
 **array / list**| | |
-|**[hashtable]('./data_structures_and_algorithms/hashtables/hashtables.md')**| | |
+|**[hashtable](./data_structures_and_algorithms/hashtables/hashtables.md)**| | |
 |**two-pointer**|||
 |**sliding window**|||
 **stack**| | |
 **queue**| | |
-|**[binary heap]('./data_structures_and_algorithms/heap/binaryheaps.md')**| | |
+|**[binary heap](./data_structures_and_algorithms/heap/binaryheaps.md)**| | |
 **binary search**| | |
-|**[tree and binary tree]('./data_structures_and_algorithms/trees/trees_notes.md')** <br> **[tree traversal]('./data_structures_and_algorithms/trees/tree_traversal.md')**| | |
+|**[tree and binary tree](./data_structures_and_algorithms/trees/trees_notes.md)** <br> **[tree traversal](./data_structures_and_algorithms/trees/tree_traversal.md)**| | |
 |**DFS / BFS**|||
-|**[graph]('./data_structures_and_algorithms/graphs/graphs_notes.md')** | | |
+|**[graph](./data_structures_and_algorithms/graphs/graphs_notes.md)** | | |
 **dynamic programming**| | |
 
 
