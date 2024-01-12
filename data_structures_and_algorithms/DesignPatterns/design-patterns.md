@@ -134,4 +134,4 @@ The Visitor Pattern represents an operation to be performed on the elements of a
 
 [2] Gamma *et. al.* p.3.
 
-additional resources: https://github.com/faif/python-patterns
+additional resources: https://github.com/yutaokkots/Design-Patterns
