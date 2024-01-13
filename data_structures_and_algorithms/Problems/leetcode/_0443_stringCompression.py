@@ -30,13 +30,14 @@ Example 3:
 Input: chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
 Output: Return 4, and the first 4 characters of the input array should be: ["a","b","1","2"].
 Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
- 
 
 Constraints:
     1 <= chars.length <= 2000
     chars[i] is a lowercase English letter, uppercase English letter, digit, or symbol.
 """
+
 from typing import List
+
 
 class Solution:
     def compress(self, chars: List[str]) -> int:
@@ -59,3 +60,4 @@ class Solution:
                 count += 1
 
         return len(chars)
+    
