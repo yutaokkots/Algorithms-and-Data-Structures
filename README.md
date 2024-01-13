@@ -1,4 +1,15 @@
+<div align="center">
+
 # **Data Structures & Algorithms**
+
+</div>
+
+
+## **Introduction**
+
+This repository is a compilation of algorithms, data structures, design patterns, concepts, and visual notes. It serves as a collection of information to help develop structured applications in the future.
+
+### **Problems**
 
 Algorithms are ordered by [Leetcode's](leetcode.com) problem number. 
 
@@ -6,13 +17,9 @@ Algorithms are ordered by [Leetcode's](leetcode.com) problem number.
 
 **[Folder of LC tests.](./data_structures_and_algorithms/Problems/leetcode/test/)**
 
-## **Introduction**
-
-This repository is a compilation of algorithms, data structures, design patterns, concepts, and visual notes. It serves as a collection of information to help develop structured applications in the future.
-
 ## **Languages**
 
-**[Python](./data_structures_and_algorithms/python)**
+**[Python notes](./data_structures_and_algorithms/python)**
 
 ## **Design Patterns** 
 
@@ -34,6 +41,8 @@ See my <u>[design pattern repository](https://github.com/yutaokkots/Design-Patte
 
 ## **Data Structures & Algorithms**
 
+<div align="center">
+
 [<h3>Data Structure Overview</h3>](./data_structures_and_algorithms/Overview.md)
 
 |Data Structure | Problem | Notes | 
@@ -46,14 +55,15 @@ See my <u>[design pattern repository](https://github.com/yutaokkots/Design-Patte
 |**queue**| | |
 |**[binary heap](./data_structures_and_algorithms/heap/binaryheaps.md)**| | |
 |**binary search**| | |
-|**backtracking**|||
+|**backtracking**| | [Visualization of backtracking problems (PDF)](./data_structures_and_algorithms/assets/backtracking.pdf) |
 |**linked lists**| | |
 |**[tree and binary tree](./data_structures_and_algorithms/trees/trees_notes.md)** <br> **[tree traversal](./data_structures_and_algorithms/trees/tree_traversal.md)**| | |
 |**DFS / BFS**|||
-|**[graph](./data_structures_and_algorithms/graphs/graphs_notes.md)** | | |
+|**[graph](./data_structures_and_algorithms/graphs/graphs_notes.md)** | | [Visualization of graph problems (PDF)](./data_structures_and_algorithms/assets/graph.pdf) |
 **dynamic programming**| | |
 |**bit manipulation**|||
 
+</div>
 
 ## **Coding Strategies**
 
