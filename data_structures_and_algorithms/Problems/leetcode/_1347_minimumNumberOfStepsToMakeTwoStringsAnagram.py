@@ -35,8 +35,8 @@ from collections import Counter
 
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
-        set_s =set(s)
-        set_t =set(t)
+        set_s = set(s)
+        set_t = set(t)
         count_s = Counter(s)
         count_t = Counter(t)
         union = set_s & set_t
