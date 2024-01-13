@@ -35,7 +35,9 @@ Constraints:
     1 <= chars.length <= 2000
     chars[i] is a lowercase English letter, uppercase English letter, digit, or symbol.
 """
+
 from typing import List
+
 
 class Solution:
     def compress(self, chars: List[str]) -> int:
@@ -58,3 +60,4 @@ class Solution:
                 count += 1
 
         return len(chars)
+    

@@ -4,13 +4,6 @@
 2352. Equal Row and Column Pairs
 Medium
 
-
-Medium
-
-Topics
-Companies
-
-Hint
 Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj) such that row ri and column cj are equal.
 
 A row and column pair is considered equal if they contain the same elements in the same order (i.e., an equal array).
@@ -35,7 +28,7 @@ Constraints:
     1 <= grid[i][j] <= 10^5
 """
 from typing import List
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 class Solution:
     """Solution for LC2352"""
@@ -67,3 +60,13 @@ class Solution:
                 answer += (r_val * c_val)
 
         return answer
+    
+class Solution2:
+    """Solution class from another user."""
+    def equalPairs(self, grid: List[List[int]]) -> int:
+        pairs = 0
+        cnt = Counter(tuple(row) for row in grid)
+        for tpl in zip(*grid):
+            pairs += cnt[tpl]
+        return pairs
+    
