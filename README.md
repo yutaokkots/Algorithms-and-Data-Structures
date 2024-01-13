@@ -12,7 +12,7 @@ This repository is a compilation of algorithms, data structures, design patterns
 
 ## **Design Patterns** 
 
-See my <ins>[design pattern repository](https://github.com/yutaokkots/Design-Patterns)</ins>.
+See my <u>[design pattern repository](https://github.com/yutaokkots/Design-Patterns)</u>.
 
 
 **[Design Patterns](./data_structures_and_algorithms/DesignPatterns/design-patterns.md)**
@@ -30,20 +30,25 @@ See my <ins>[design pattern repository](https://github.com/yutaokkots/Design-Pat
 
 ## **Data Structures & Algorithms**
 
+[<h3>Data Structure Overview</h3>](./data_structures_and_algorithms/Overview.md)
+
 |Data Structure | Problem | Notes | 
 |-|-|-|
 **array / list**| | |
 |**[hashtable](./data_structures_and_algorithms/hashtables/hashtables.md)**| | |
 |**two-pointer**|||
 |**sliding window**|||
-**stack**| | |
-**queue**| | |
+|**stack**| | |
+|**queue**| | |
 |**[binary heap](./data_structures_and_algorithms/heap/binaryheaps.md)**| | |
-**binary search**| | |
+|**binary search**| | |
+|**backtracking**|||
+|**linked lists**| | |
 |**[tree and binary tree](./data_structures_and_algorithms/trees/trees_notes.md)** <br> **[tree traversal](./data_structures_and_algorithms/trees/tree_traversal.md)**| | |
 |**DFS / BFS**|||
 |**[graph](./data_structures_and_algorithms/graphs/graphs_notes.md)** | | |
 **dynamic programming**| | |
+|**bit manipulation**|||
 
 
 ## **Coding Strategies**
