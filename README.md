@@ -2,6 +2,10 @@
 
 Algorithms are ordered by [Leetcode's](leetcode.com) problem number. 
 
+**[Big folder of LC problems.](./data_structures_and_algorithms/Problems/leetcode/)**
+
+**[Folder of LC tests.](./data_structures_and_algorithms/Problems/leetcode/test/)**
+
 ## **Introduction**
 
 This repository is a compilation of algorithms, data structures, design patterns, concepts, and visual notes. It serves as a collection of information to help develop structured applications in the future.
