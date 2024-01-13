@@ -49,22 +49,22 @@ d = {
 }
 ```
 
-***Doesn't require declaring the keys as strings:***
-```
-a = dict(one=1, two=2, three=3)
-```
-
 ***Most common way to create dictionary, and comparable to objects in javascript:***
 ```
 b = {'one': 1, 'two': 2, 'three': 3}
 ```
 
-***Zipping two lists together:***
+***Using dict() does not reuquire declaring the keys as strings:***
+```
+a = dict(one=1, two=2, three=3)
+```
+
+***Using zip() to zip two lists together:***
 ```
 c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
 ```
 
-***Creating a dictionary from a sset of tuples:***
+***Using dict() and a set of tuples to create a dictionary:***
 ```
 d = dict([('two', 2), ('one', 1), ('three', 3)])
 ```
@@ -73,7 +73,7 @@ d = dict([('two', 2), ('one', 1), ('three', 3)])
 ```
 e = dict({'three': 3, 'one': 1, 'two': 2})
 ```
-***Mixing up different formats:***
+***Using dict() and mixing up different formats:***
 ```
 f = dict({'one': 1, 'three': 3}, two=2)
 ```
