@@ -42,13 +42,18 @@ from typing import List
 
 class Solution:
     def decodeString(self, s: str) -> str:
-        stack:int = 0    # [rep, str]
-        for i in range(len(s)):
-            if s[i].isnumeric():
-                stack.append(s[i])
-            
-            
+        stack = []
+        for char in s:
+            if char != ']':
+                stack.append(char)
+            else:
+                result = ""
+                while stack[-1] != "[":
+                    result += stack.pop()
+                stack.pop()
+                num = ""
+                while stack and stack[-1].isnumeric():
+                    num += stack.pop()
+                stack.append(result * int(num[::-1]))
 
-            
-
-        return s
+        return "".join([letter[::-1] for letter in stack])
