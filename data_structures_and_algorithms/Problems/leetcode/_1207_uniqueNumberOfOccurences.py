@@ -27,7 +27,6 @@ Constraints:
 from collections import Counter
 from typing import List
 
-
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         arr_ct = Counter(arr)
@@ -38,3 +37,10 @@ class Solution:
                 return False
             prev = ct
         return True
+
+class Solution2:
+    """Second attempt at LC1207."""
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        ct_dict = Counter(arr)
+        set_values = set(ct_dict.values())
+        return len(set_values) == len(ct_dict.values())
