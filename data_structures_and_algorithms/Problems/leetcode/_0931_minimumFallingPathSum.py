@@ -31,6 +31,30 @@ Constraints:
 from typing import List
 
 class Solution:
+    """Dynamic Programming solution, via user @prodonik"""
+    def minFallingPathSum(self, matrix: List[List[int]]) -> int:
+        if len(matrix) == 1:
+            return matrix[0][0]
+        rows = cols = len(matrix)
+        dp = [[0] * rows for _ in range(rows)]
+        dp = matrix.copy()
+        result = 100000
+
+        for i in range(rows - 2, -1, -1):
+            for j in range(cols):
+                min_path = dp[i + 1][j]
+                if j > 0:
+                    min_path = min(min_path, dp[i + 1][j - 1])
+                if j < cols - 1:
+                    min_path = min(min_path, dp[i + 1][j + 1])
+                dp[i][j] += min_path
+                
+        for num in dp[0]:
+            result = min(result, num)
+        
+        return result
+
+class Solution2:
     """First attempt at LC931, naive solution."""
     def minFallingPathSum(self, matrix: List[List[int]]) -> int:
         rows, cols = len(matrix), len(matrix)
@@ -55,3 +79,9 @@ class Solution:
             backtrack(0, k)
 
         return self.min_sum
+    
+matrix = [[36,62,4,57,-62,57,-11,52,-9,58],[-85,-92,87,-3,81,89,33,14,-57,-82],[64,78,56,40,-16,-39,-78,-15,13,85],[88,-17,-81,55,47,-94,-11,37,-94,84],[93,45,-85,-86,-28,-95,-31,-98,95,64],[-86,79,-59,-59,35,88,-76,-99,-26,-96],[21,72,-63,-78,-31,92,-74,94,-28,-5],[-42,88,92,27,-64,99,-80,16,-69,80],[90,61,-37,-52,51,-42,-16,-91,-74,-96],[-85,-86,-16,10,48,-72,-16,28,-84,-11]]
+
+sol = Solution()
+a = sol.minFallingPathSum(matrix)
+print(a)
