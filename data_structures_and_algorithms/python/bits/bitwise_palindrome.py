@@ -1,5 +1,9 @@
 """operation >> and <<"""
 
+"""Use the bitwise shift operators to determine if a series of integers is a palindrome. 
+See LC1457 for implementation.
+"""
+
 from typing import List
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
