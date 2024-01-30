@@ -41,7 +41,7 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 tokens[i] is either an operator: "+", "-", "*", or "/", or an integer in the range [-200, 200].
 """
 
-
+from typing import List
 
 questions = {
     "q1":[["10","6","9","3","+","-11","*","/","*","17","+","5","+"], 22], 
@@ -50,7 +50,7 @@ questions = {
 }
 
 class Solution:
-    def evalRPN(self, tokens: list[str]) -> int:
+    def evalRPN(self, tokens: List[str]) -> int:
         stack = []
         operator = ("+","-","*","/")
 
@@ -69,6 +69,27 @@ class Solution:
 
         return stack[0]
 
+class Solution2:
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+        operation = "+-/*"
+        for t in tokens:
+            if t in operation:
+                first = stack.pop()
+                second = stack.pop()
+                result = None
+                if t == "+":
+                    result = second + first
+                elif t == "-":
+                    result = second - first
+                elif t == "/":
+                    result = int(second / first)
+                elif t == "*":
+                    result = second * first
+                stack.append(result)
+            else:
+                stack.append(int(t))
+        return stack[0]
 
 soln = Solution()
 
