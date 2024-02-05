@@ -65,6 +65,10 @@ See my <u>[design pattern repository](https://github.com/yutaokkots/Design-Patte
 
 </div>
 
+## **REST API notes**
+
+[RESTful Routes](./data_structures_and_algorithms/REST_API.md)
+
 ## **Coding Strategies**
 
 <div align="center">
