@@ -20,8 +20,20 @@ Output: [["a"]]
 
 '''
 from typing import List
+from collections import defaultdict
 
 class Solution:
+    """Another solution for LC49."""
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        memo = defaultdict(list)
+        for word in strs:
+            rearranged_lst = sorted(word)
+            key = "".join(rearranged_lst)
+            memo[key].append(word)
+        
+        return list(memo.values())
+    
+class Solution2:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         memo = {}
         result = [] 
@@ -56,3 +68,4 @@ class Solution:
         for val in memo.values():
             answer.append(val)
         return answer
+    
