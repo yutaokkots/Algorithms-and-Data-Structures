@@ -50,3 +50,21 @@ class Solution2:
                 left -= 1
                 right += 1
         return ans
+    
+class Solution3:
+    def countSubstrings(self, s: str) -> int:
+        answer: int = 0
+        length_s: int =  len(s)
+        for i in range(length_s):
+            for j in range(i, length_s):
+                if self.is_palindrome(s, i, j):
+                    answer += 1
+        return answer 
+
+    def is_palindrome(self, s:str, left:int, right:int) -> bool:
+        while left < right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
