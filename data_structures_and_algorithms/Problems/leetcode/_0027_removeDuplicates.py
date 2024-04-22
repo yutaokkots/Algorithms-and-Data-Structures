@@ -22,3 +22,17 @@ class Solution:
             nums.append(nums_copy.pop())
         return len(nums)
     
+    def removeElement02(self, nums: List[int], val:int) -> int:
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] == val:
+                nums.pop(i)
+        return len(nums)
+    
+    def removeElement03(self, nums:List[int], val:int) -> int:
+        remaining = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[i], nums[remaining] = nums[remaining], nums[i]
+                remaining += 1
+        return remaining
+    
