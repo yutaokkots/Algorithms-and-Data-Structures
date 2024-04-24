@@ -7,7 +7,6 @@ There are a total of numCourses courses you have to take, labeled from 0 to numC
 For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
 Return true if you can finish all courses. Otherwise, return false.
 
-
 Example 1:
 
 Input: numCourses = 2, prerequisites = [[1,0]]
@@ -30,6 +29,8 @@ prerequisites[i].length == 2
 0 <= ai, bi < numCourses
 All the pairs prerequisites[i] are unique.
 '''
+
+from typing import List
 
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
