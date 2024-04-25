@@ -42,6 +42,7 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being m
  
 
 '''
+
 from typing import List
 import collections
 class Solution:
@@ -117,3 +118,42 @@ class Solution:
                 print('true')
 
         return True
+    
+    def isValidSudoku2(self, board: List[List[str]]) -> bool:
+        dict_sets = collections.defaultdict(set)
+        dict_ints = collections.defaultdict(int)
+        centers = ((1, 1), (1, 4), (1, 7), 
+                (4, 1), (4, 4), (4, 7), 
+                (7, 1), (7, 4), (7, 7))
+        circle = ((-1,-1), (-1, 0), (-1,1),
+                (0,-1), (0,0), (0,1),
+                (1,-1), (1,0), (1,1))
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if board[i][j] != ".":
+                    dict_sets[f"row{i}"].add(board[i][j])
+                    dict_ints[f"row{i}"] += 1
+                    dict_sets[f"col{j}"].add(board[i][j])
+                    dict_ints[f"col{j}"] += 1
+                if (i, j) in centers:
+                    for x, y in circle:
+                        if board[i + x][j + y] != ".":
+                            dict_sets[f"box{i}{j}"].add(board[i + x][j + y])
+                            dict_ints[f"box{i}{j}"] += 1             
+             
+        for key in dict_sets.keys():
+            if len(dict_sets[key]) != dict_ints[key]:
+                return False
+
+        return True
+    
+    def isValidSudoku3(self, board: List[List[str]]) -> bool:
+        result = []
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                val = board[i][j]
+                if val != ".":
+                    result += [(i, val), 
+                            (val, j), 
+                            (i//3, j//3, val)]
+        return len(result) == len(set(result))
