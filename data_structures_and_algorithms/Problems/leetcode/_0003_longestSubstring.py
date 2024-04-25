@@ -26,7 +26,7 @@ Example 4
 output = 3
 '''
 
-
+from collections import defaultdict
 
 class Solution():
     # solution does not work 
@@ -54,16 +54,29 @@ class Solution():
         left = 0
         max_str = 0
         str_set = set()
-
         for right in range(len(s)):
             while s[right] in str_set:
                 str_set.discard(s[left])
                 left += 1
             str_set.add(s[right])
             max_str = max(max_str, right-left+1)
-
         return max_str
 
+    def lengthOfLongestSubstring3(self, s: str) -> int:
+        if not s: 
+            return 0
+        dict_seen = defaultdict(int)
+        left = 0
+        max_substring = 0
+        for right in range(len(s)):
+            curr_letter = s[right]
+            dict_seen[curr_letter] += 1
+            while dict_seen[curr_letter] > 1:
+                dict_seen[s[left]] -= 1
+                left += 1
+            max_substring = max(max_substring, right + 1 - left)
+        return max_substring
+    
 str_1 = "abcabcbb"
 str_2 = "bbbbb"
 str_3 = "wwkew"
