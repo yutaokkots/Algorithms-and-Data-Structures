@@ -38,3 +38,22 @@ class Solution:
         for i in range(rows):
             matrix[i].reverse()
         return matrix
+
+    def rotate2(self, matrix: List[List[int]]) -> None:
+        row, col = len(matrix), len(matrix[0])
+        visited = set()
+
+        for i in range(row):
+            for j in range(col):
+                if (i, j) not in visited:
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+                visited.add((i,j))
+                visited.add((j,i))
+        visited.clear()
+        for i in range(row):
+            for j in range(col):
+                refl_j = col - 1 - j
+                if (i, j) not in visited:
+                    matrix[i][j], matrix[i][refl_j] = matrix[i][refl_j], matrix[i][j]
+                visited.add((i, j))
+                visited.add((i, refl_j))

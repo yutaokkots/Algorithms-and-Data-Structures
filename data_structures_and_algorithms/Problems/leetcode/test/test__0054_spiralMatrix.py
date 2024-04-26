@@ -18,9 +18,9 @@ TEST_CASES = [
                   [2,8,9,4],
                   [8,5,1,7]],
         "output": [2,3,5,4,1,4,7,1,5,8,2,0,4,2,9,8]
-    },
-
+    }
 ]
+
 class Test0054(TestCase):
     def setUp(self) -> None:
         self.test_cases = TEST_CASES
