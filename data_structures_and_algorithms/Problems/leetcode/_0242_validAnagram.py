@@ -55,9 +55,6 @@ class Solution:
         return True
 
 
-
-
-
     def isAnagram5(self, s: str, t: str) -> bool:
         return Counter(s) == Counter(t)
 
@@ -102,3 +99,48 @@ class Solution:
         #         return False
 
         # return True 
+
+"""
+Java Solution 1:
+
+    class Solution {
+        public boolean isAnagram(String s, String t) {
+            HashMap<Character, Integer> charCountS = new HashMap<>();
+            HashMap<Character, Integer> charCountT = new HashMap<>();
+
+            for (char sChar: s.toCharArray()){
+                if (charCountS.containsKey(sChar)){
+                    charCountS.put(sChar, charCountS.get(sChar) + 1);
+                } else {
+                    charCountS.put(sChar, 1);
+                }
+            }
+            for (char tChar: t.toCharArray()){
+                if (charCountT.containsKey(tChar)){
+                charCountT.put(tChar, charCountT.get(tChar) + 1);
+                } else {
+                    charCountT.put(tChar, 1);
+                }
+            }
+            return charCountS.equals(charCountT);
+        }
+    }
+
+Java Solution 1:
+
+    class Solution {
+        public boolean isAnagram(String s, String t) {
+            char sArray[] = s.toCharArray();
+            char tArray[] = t.toCharArray();
+
+            Arrays.sort(sArray);
+            Arrays.sort(tArray);
+            
+            String sStr = new String(sArray);
+            String tStr = new String(tArray);
+
+            return sStr.equals(tStr);
+        }
+}
+
+"""
