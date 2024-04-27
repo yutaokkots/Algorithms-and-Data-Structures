@@ -8,7 +8,7 @@ in a Unix-style file system, convert it to the simplified canonical path.
 In a Unix-style file system, a period '.' refers to the current directory, 
 a double period '..' refers to the directory up a level, and 
 any multiple consecutive slashes (i.e. '//') are treated as a single slash '/'. 
-For this problem, any other format of periods such as '...' are treated as file/directory names.
+For this problem, any other format of periods such as '...' are treated as file/directory segments.
 
 The canonical path should have the following format:
 
@@ -23,7 +23,7 @@ Return the simplified canonical path.
 Example 1:
 Input: path = "/home/"
 Output: "/home"
-Explanation: Note that there is no trailing slash after the last directory name.
+Explanation: Note that there is no trailing slash after the last directory segment.
 
 Example 2:
 Input: path = "/../"
@@ -41,6 +41,19 @@ Constraints:
     path is a valid absolute Unix path.
 '''
 
+
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        ...
+        canonical_path = []             #stack
+        file_path = path.split("/")
+        print(file_path)
+        for segment in file_path:
+            if segment == "..":
+                if canonical_path:
+                    canonical_path.pop()
+            elif (segment == "." or segment == ""):
+                continue
+            else:
+                canonical_path.append(segment)
+        print(f"{canonical_path} \n")
+        return "/" + "/".join(canonical_path)
