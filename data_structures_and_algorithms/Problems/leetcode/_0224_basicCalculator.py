@@ -1,6 +1,7 @@
 '''
 224. Basic Calculator
 Hard
+
 Given a string s representing a valid expression, implement a basic calculator to evaluate it, 
 and return the result of the evaluation.
 
@@ -32,7 +33,7 @@ Constraints:
 class Solution:
     def calculate(self, s: str) -> int:
         stack = []
-        calc_sum = 0
+        ans_sum = 0
         curr_sum = 0
         pos_neg = 1
 
@@ -40,20 +41,20 @@ class Solution:
             if str_s.isdigit():
                 curr_sum = (curr_sum * 10) + int(str_s)
             elif str_s in '-+':
-                calc_sum += pos_neg * curr_sum
+                ans_sum += pos_neg * curr_sum
                 curr_sum = 0
                 if str_s == "+":
                     pos_neg = 1
                 else:
                     pos_neg = -1
             elif str_s == '(':
-                stack.append(calc_sum)
+                stack.append(ans_sum)
                 stack.append(pos_neg)
                 pos_neg = 1
-                calc_sum = 0
+                ans_sum = 0
             elif str_s == ')':
-                calc_sum += curr_sum * pos_neg
-                calc_sum *= stack.pop()
-                calc_sum += stack.pop()
+                ans_sum += curr_sum * pos_neg
+                ans_sum *= stack.pop()
+                ans_sum += stack.pop()
                 curr_sum = 0
-        return calc_sum + (curr_sum * pos_neg)
+        return ans_sum + (curr_sum * pos_neg)
