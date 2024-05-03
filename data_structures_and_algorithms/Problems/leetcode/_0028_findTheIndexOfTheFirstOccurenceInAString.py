@@ -27,3 +27,12 @@ class Solution:
                 return idx
 
         return -1
+
+    def strStr2(self, haystack: str, needle: str) -> int:
+        if haystack == needle:
+            return 0
+        str_length = len(needle)
+        for i in range(str_length, len(haystack)+1):
+            if haystack[i-str_length: i] == needle:
+                return i-str_length
+        return -1
